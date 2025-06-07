@@ -1,0 +1,51 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.loginContainer {
+  max-width: map-get($sizes, maxWidthLoginContainer);
+  width: 100%;
+  height: 100%;
+  background-color: map-get($commonColors, semiWhite);
+  border-radius: map-get($borderRadius, sm);
+  padding: clamp(map-get($spacing, xl), 2vw, map-get($spacing, 4xl));
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  gap: clamp(map-get($spacing, 2xl), 2vw, map-get($spacing, 3xl));
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, lg);
+    width: 100%;
+  }
+
+  .logo {
+    width: map-get($sizes, iconMedium);
+  }
+
+  h1 {
+    font-size: clamp(map-get($typography, lg), 4vw, map-get($typography, 2xl));
+    font-weight: map-get($fontWeight, black);
+  }
+
+  a {
+    align-self: flex-end;
+  }
+
+  .highlight {
+    color: var(--primary);
+  }
+
+  @media (max-width: map-get($media, md)) {
+    max-width: 100%;
+    padding: map-get($sizes, null);
+    background-color: none;
+    height: 100%;
+
+    .logo,
+    h1 {
+      align-self: center;
+    }
+  }
+}

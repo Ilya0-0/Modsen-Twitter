@@ -1,0 +1,26 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.pageLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: clamp(map-get($spacing, 4xl), 2vw, map-get($spacing, md));
+
+  main {
+    flex-grow: 1;
+    height: auto;
+  }
+
+  footer {
+    padding-block: map-get($spacing, md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($spacing, xl);
+    justify-content: center;
+  }
+
+  @media (max-width: map-get($media, md)) {
+    gap: map-get($spacing, 4xl);
+  }
+}
