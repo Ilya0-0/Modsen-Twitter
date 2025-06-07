@@ -1,0 +1,66 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.button {
+  padding: map-get($spacing, md) map-get($spacing, lg);
+  border: none;
+  cursor: pointer;
+  font-size: map-get($typography, md);
+  transition: all 0.3s ease;
+  background-color: var(--backgroundColor);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.outlineBlack {
+  border: map-get($borderWidth, thin) solid var(--semiBlack);
+  border-radius: map-get($borderRadius, round);
+}
+
+.outlinePrimary {
+  padding: map-get($spacing, md);
+  border: map-get($borderWidth, thin) solid var(--primary);
+  border-radius: map-get($borderRadius, round);
+  height: map-get($sizes, heightOutlinePrimaryBtn);
+
+  &:hover {
+    background-color: var(--semiBlue);
+  }
+}
+
+.primary {
+  font-weight: map-get($fontWeight, semiBold);
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: map-get($borderRadius, round);
+
+  &:disabled {
+    background-color: var(--semiBlue);
+  }
+}
+
+.secondary {
+  background-color: var(--gray);
+  color: var(--white);
+  border-radius: map-get($borderRadius, round);
+}
+
+.outlineGray {
+  color: var(--white);
+  border-radius: map-get($borderRadius, sm);
+  background-color: var(--primary);
+}
+
+.delete {
+  border: map-get($borderWidth, thin) solid var(--gray);
+  border-radius: map-get($borderRadius, sm);
+}
+
+@media (max-width: map-get($media, sm)) {
+  .button {
+    padding: map-get($spacing, lg) map-get($spacing, lg);
+    font-size: map-get($typography, sm);
+  }
+}

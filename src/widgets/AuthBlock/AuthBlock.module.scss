@@ -1,0 +1,65 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(map-get($spacing, xl), 2vw, map-get($spacing, 3xl));
+  flex-grow: 1;
+  margin-right: map-get($spacing, 2xl);
+
+  .logo {
+    width: map-get($sizes, iconMedium);
+  }
+
+  h1 {
+    font-size: clamp(map-get($typography, 2xl), 5vw, map-get($typography, 3xl));
+    font-weight: map-get($fontWeight, black);
+  }
+
+  h2 {
+    font-size: clamp(map-get($typography, lg), 3vw, map-get($typography, 2xl));
+    font-weight: map-get($fontWeight, black);
+  }
+
+  .auth {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, 2xl);
+    max-width: fit-content;
+
+    .btnContainer {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($spacing, lg);
+
+      button {
+        font-weight: map-get($fontWeight, medium);
+      }
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  }
+
+  .spacedParagraph {
+    display: block;
+  }
+
+  @media (max-width: map-get($media, md)) {
+    margin-right: map-get($sizes, null);
+    padding-inline: map-get($spacing, 2xl);
+    .auth {
+      max-width: 100%;
+    }
+    .logo {
+      display: none;
+    }
+  }
+}
