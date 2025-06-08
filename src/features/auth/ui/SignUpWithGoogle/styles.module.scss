@@ -1,0 +1,9 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.googleAuth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: map-get($spacing, sm);
+}

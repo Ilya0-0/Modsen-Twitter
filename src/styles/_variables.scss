@@ -1,0 +1,84 @@
+$spacing: (
+  xs: 4px,
+  sm: 8px,
+  md: 12px,
+  lg: 16px,
+  xl: 24px,
+  2xl: 32px,
+  3xl: 48px,
+  4xl: 64px,
+);
+
+$sizes: (
+  null: 0px,
+  iconSmall: 24px,
+  iconMedium: 48px,
+  heightOutlinePrimaryBtn: 48px,
+  maxWidthLoginContainer: 600px,
+  minWidthLoginBanner: 360px,
+  maxHeightSelect: 160px,
+  heightMobileSignUpMainBanner: 170px,
+);
+
+$borderRadius: (
+  xs: 4px,
+  sm: 8px,
+  md: 12px,
+  lg: 16px,
+  round: 100px,
+);
+
+$borderWidth: (
+  thin: 1px,
+  medium: 2px,
+  thick: 3px,
+);
+
+$typography: (
+  xs: 14px,
+  sm: 16px,
+  md: 20px,
+  lg: 24px,
+  xl: 32px,
+  2xl: 48px,
+  3xl: 80px,
+);
+
+$fontWeight: (
+  regular: 400,
+  medium: 500,
+  bold: 600,
+  semiBold: 700,
+  black: 900,
+);
+
+$media: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  2xl: 1400px,
+);
+
+$z-indexes: (
+  base: 1,
+  content: 10,
+  dropdown: 200,
+  overlay: 900,
+  modal: 1000,
+  highest: 9999,
+);
+
+$commonColors: (
+  'black': #000000,
+  'semiBlack': #00000099,
+  'white': #ffffff,
+  'semiWhite': #ffffff9a,
+  'blue': #1da1f2,
+  'semiBlue': #1da1f280,
+  'teal': #1d9bf01a,
+  'ruby': #ef1c5c,
+  'semiRuby': #ef1c5c80,
+  'green': #17a100,
+  'gray': #5f6980,
+);

@@ -22,6 +22,8 @@ export default {
     '^~/features/(.*)$': '<rootDir>/src/features/$1',
     '^~/entities/(.*)$': '<rootDir>/src/entities/$1',
     '^~/shared/(.*)$': '<rootDir>/src/shared/$1',
+    '^~/styles/(.*)$': '<rootDir>/src/styles/$1',
+    '^~/constants/(.*)$': '<rootDir>/src/constants/$1',
     '^~tests/(.*)$': '<rootDir>/tests/$1',
   },
   coverageDirectory: 'coverage',

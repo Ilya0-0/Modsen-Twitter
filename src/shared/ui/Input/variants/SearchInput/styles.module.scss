@@ -1,0 +1,12 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.searchContainer {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: map-get($spacing, md);
+    left: map-get($spacing, lg);
+  }
+}

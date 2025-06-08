@@ -1,0 +1,67 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.banner {
+  background-image: url('/png/banner1.png');
+  background-position: 50%;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .matteGlass {
+    position: absolute;
+    top: map-get($sizes, null);
+    bottom: map-get($sizes, null);
+    left: map-get($sizes, null);
+    right: map-get($sizes, null);
+    background-color: var(--semiWhite);
+    z-index: map.get($z-indexes, content);
+  }
+
+  .bannerContent {
+    width: 75%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .decorativeText {
+      font-size: clamp(
+        map-get($typography, 2xl),
+        5vw,
+        map-get($typography, 3xl)
+      );
+      position: absolute;
+      top: map-get($spacing, 4xl);
+      left: map-get($spacing, lg);
+      color: var(--semiWhite);
+      font-weight: map-get($fontWeight, black);
+    }
+
+    .bannerImg {
+      height: 100%;
+      z-index: map.get($z-indexes, base);
+    }
+  }
+
+  @media (max-width: map-get($media, md)) {
+    width: 100%;
+    height: map-get($sizes, heightMobileSignUpMainBanner);
+    background-size: cover;
+
+    .bannerContent {
+      .decorativeText {
+        top: auto;
+        bottom: map-get($sizes, null);
+      }
+
+      .bannerImg {
+        height: 70%;
+      }
+    }
+  }
+}

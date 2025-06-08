@@ -1,0 +1,63 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.banner {
+  width: 50%;
+  min-width: map-get($sizes, minWidthLoginBanner);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  .bannerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: absolute;
+    }
+
+    div img {
+      object-fit: contain;
+    }
+
+    .dummy {
+      bottom: map-get($sizes, null);
+      width: 70%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: map-get($media, md)) {
+    flex-direction: column;
+    width: 100%;
+    min-width: map-get($sizes, null);
+    justify-content: start;
+    .bannerContent {
+      div {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .dummy {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

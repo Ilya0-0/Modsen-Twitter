@@ -1,12 +1,18 @@
-import './styles/index.scss';
+import { ReactNode } from 'react';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import { Inter } from 'next/font/google';
+
+import '~/styles/index.scss';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   );
