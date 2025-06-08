@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import Banner from '~/shared/ui/Banner/Banner';
+import Banner from '~/shared/ui/Banner';
 
 import dummy from '/public/png/Work-from-home.png';
 
-import styles from './SignUpBanner.module.scss';
+import styles from './styles.module.scss';
 
 const SignUpBanner = () => {
   return (

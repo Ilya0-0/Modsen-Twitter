@@ -49,7 +49,7 @@
   border: map.get($borderWidth, thin) solid var(--gray);
   border-radius: map.get($borderRadius, xs);
   font-size: map.get($typography, md);
-  z-index: 10;
+  z-index: map.get($z-indexes, dropdown);
   overflow: hidden;
   overflow-y: auto;
   opacity: 0;

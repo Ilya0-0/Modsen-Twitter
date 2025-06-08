@@ -2,8 +2,8 @@ import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps';
 
 import SearchIcon from '/public/svg/search.svg?react';
 
-import Input from '../Input';
-import styles from './Search.module.scss';
+import Input from '../..';
+import styles from './styles.module.scss';
 
 const SearchInput = ({ onChange, className, ...props }: InputProps) => {
   return (

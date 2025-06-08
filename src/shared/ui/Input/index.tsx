@@ -7,7 +7,7 @@ import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps';
 import EyeIcon from '/public/svg/eyeIcon.svg?react';
 import EyeOffIcon from '/public/svg/eyeOffIcon.svg?react';
 
-import styles from './Input.module.scss';
+import styles from './styles.module.scss';
 
 const Input = ({
   variant = InputVariant.Primary,

@@ -4,7 +4,7 @@ import { SignUpWithEmail, SignUpWithGoogle } from '~/features/auth/ui';
 
 import TwitterLogo from '/public/svg/twitter-logo.svg?react';
 
-import styles from './AuthBlock.module.scss';
+import styles from './styles.module.scss';
 
 const AuthBlock = () => {
   return (

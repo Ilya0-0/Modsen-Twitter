@@ -60,6 +60,15 @@ $media: (
   2xl: 1400px,
 );
 
+$z-indexes: (
+  base: 1,
+  content: 10,
+  dropdown: 200,
+  overlay: 900,
+  modal: 1000,
+  highest: 9999,
+);
+
 $commonColors: (
   'black': #000000,
   'semiBlack': #00000099,

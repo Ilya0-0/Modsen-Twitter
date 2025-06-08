@@ -12,14 +12,6 @@
     height: auto;
   }
 
-  footer {
-    padding-block: map-get($spacing, md);
-    display: flex;
-    flex-wrap: wrap;
-    gap: map-get($spacing, xl);
-    justify-content: center;
-  }
-
   @media (max-width: map-get($media, md)) {
     gap: map-get($spacing, 4xl);
   }

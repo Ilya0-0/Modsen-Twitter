@@ -2,7 +2,7 @@ import OutlinePrimaryButton from '~/shared/ui/Button/variants/OutlinePrimaryButt
 
 import GoogleLogo from '/public/svg/google-logo.svg?react';
 
-import styles from './SignUpWithGoogle.module.scss';
+import styles from './styles.module.scss';
 
 const SignUpWithGoogle = () => {
   return (

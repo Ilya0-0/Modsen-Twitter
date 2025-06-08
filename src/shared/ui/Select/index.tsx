@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import styles from './Select.module.scss';
 import { SelectOption } from './SelectOption';
+import styles from './styles.module.scss';
 
 interface SelectProps<T> {
   selected: SelectOption<T> | null;
@@ -67,13 +67,13 @@ const Select = <T,>({
       </div>
       {isOpen && options.length > 0 && (
         <ul className={styles.optionsList}>
-          {options.map((option, index) => (
+          {options.map(({ value, title }) => (
             <li
-              key={index}
-              className={`${styles.option} ${option.value === activeOption?.value ? styles.optionSelected : ''}`}
-              onClick={handleOptionClick(option)}
+              key={title}
+              className={`${styles.option} ${value === activeOption?.value ? styles.optionSelected : ''}`}
+              onClick={handleOptionClick({ value, title })}
             >
-              {option.title}
+              {title}
             </li>
           ))}
         </ul>

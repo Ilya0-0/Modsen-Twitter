@@ -1,0 +1,10 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.authFooter {
+  padding-block: map-get($spacing, md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($spacing, xl);
+  justify-content: center;
+}

@@ -1,8 +1,8 @@
 import { ButtonProps, ButtonVariant } from '~/shared/ui/Button/ButtonProps';
 
-import Button from '../Button';
+import Button from '../..';
 
-const OutlineGrayButton = ({
+const OutlinePrimaryButton = ({
   children,
   onClick,
   className,
@@ -11,7 +11,7 @@ const OutlineGrayButton = ({
   return (
     <Button
       {...props}
-      variant={ButtonVariant.OutlineGray}
+      variant={ButtonVariant.OutlinePrimary}
       onClick={onClick}
       className={className}
     >
@@ -20,4 +20,4 @@ const OutlineGrayButton = ({
   );
 };
 
-export default OutlineGrayButton;
+export default OutlinePrimaryButton;

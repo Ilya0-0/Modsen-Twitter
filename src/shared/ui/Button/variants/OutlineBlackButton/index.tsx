@@ -1,6 +1,6 @@
 import { ButtonProps, ButtonVariant } from '~/shared/ui/Button/ButtonProps';
 
-import Button from '../Button';
+import Button from '../..';
 
 const OutlineBlackButton = ({
   children,

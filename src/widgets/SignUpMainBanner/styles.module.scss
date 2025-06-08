@@ -18,7 +18,7 @@
     left: map-get($sizes, null);
     right: map-get($sizes, null);
     background-color: var(--semiWhite);
-    z-index: 20;
+    z-index: map.get($z-indexes, content);
   }
 
   .bannerContent {
@@ -44,7 +44,7 @@
 
     .bannerImg {
       height: 100%;
-      z-index: 10;
+      z-index: map.get($z-indexes, base);
     }
   }
 
@@ -61,7 +61,6 @@
 
       .bannerImg {
         height: 70%;
-        z-index: 10;
       }
     }
   }

@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-import Banner from '~/shared/ui/Banner/Banner';
+import Banner from '~/shared/ui/Banner';
 
 import chandelier from '/public/png/chandelier-with-green-round-lampshade.png';
 import dummy from '/public/png/dummy.png';
 
-import styles from './LoginBanner.module.scss';
+import styles from './styles.module.scss';
 
 const LoginBanner = () => {
   return (

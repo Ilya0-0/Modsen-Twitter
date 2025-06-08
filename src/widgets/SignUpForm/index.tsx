@@ -6,13 +6,13 @@ import Link from 'next/link';
 
 import PrimaryButton from '~/shared/ui/Button/variants/PrimaryButton';
 import PrimaryInput from '~/shared/ui/Input/variants/PrimaryInput';
+import Select from '~/shared/ui/Select';
 import { getDays, getMonths, getYears } from '~/shared/ui/Select/dateOptions';
-import Select from '~/shared/ui/Select/Select';
 import { SelectOption } from '~/shared/ui/Select/SelectOption';
 
 import TwitterLogo from '/public/svg/twitter-logo.svg?react';
 
-import styles from './SignUpForm.module.scss';
+import styles from './styles.module.scss';
 
 const SignUpForm = () => {
   const monthOptions = getMonths();

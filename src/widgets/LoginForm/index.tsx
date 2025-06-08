@@ -5,7 +5,7 @@ import PrimaryInput from '~/shared/ui/Input/variants/PrimaryInput';
 
 import TwitterLogo from '/public/svg/twitter-logo.svg?react';
 
-import styles from './LoginForm.module.scss';
+import styles from './styles.module.scss';
 
 const LoginForm = () => {
   return (

@@ -1,8 +1,8 @@
-import Banner from '~/shared/ui/Banner/Banner';
+import Banner from '~/shared/ui/Banner';
 
 import TwitterLogo from '/public/svg/twitter-logo.svg?react';
 
-import styles from './SignUpMainBanner.module.scss';
+import styles from './styles.module.scss';
 
 const SignUpMainBanner = () => {
   return (

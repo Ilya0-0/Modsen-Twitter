@@ -1,6 +1,6 @@
 import { ButtonProps, ButtonVariant } from '~/shared/ui/Button/ButtonProps';
 
-import styles from './Button.module.scss';
+import styles from './styles.module.scss';
 
 const Button = ({
   children,

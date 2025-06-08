@@ -1,8 +1,8 @@
 import { ButtonProps, ButtonVariant } from '~/shared/ui/Button/ButtonProps';
 
-import Button from '../Button';
+import Button from '../..';
 
-const PrimaryButton = ({
+const SecondaryButton = ({
   children,
   onClick,
   className,
@@ -11,7 +11,7 @@ const PrimaryButton = ({
   return (
     <Button
       {...props}
-      variant={ButtonVariant.Primary}
+      variant={ButtonVariant.Secondary}
       onClick={onClick}
       className={className}
     >
@@ -19,4 +19,5 @@ const PrimaryButton = ({
     </Button>
   );
 };
-export default PrimaryButton;
+
+export default SecondaryButton;

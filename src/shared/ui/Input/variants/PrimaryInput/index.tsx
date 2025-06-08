@@ -1,6 +1,6 @@
 import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps';
 
-import Input from '../Input';
+import Input from '../..';
 
 const PrimaryInput = ({ onChange, className, ...props }: InputProps) => {
   return (
