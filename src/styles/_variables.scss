@@ -13,10 +13,12 @@ $sizes: (
   null: 0px,
   iconSmall: 24px,
   iconMedium: 48px,
+  widthErrorPopup: 500px,
   heightOutlinePrimaryBtn: 48px,
   maxWidthLoginContainer: 600px,
   minWidthLoginBanner: 360px,
   maxHeightSelect: 160px,
+  maxWidthNotification: 340px,
   heightMobileSignUpMainBanner: 170px,
 );
 
@@ -66,6 +68,7 @@ $z-indexes: (
   dropdown: 200,
   overlay: 900,
   modal: 1000,
+  notification: 1100,
   highest: 9999,
 );
 

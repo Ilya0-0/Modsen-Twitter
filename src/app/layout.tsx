@@ -2,6 +2,8 @@ import { ReactNode } from 'react';
 
 import { Inter } from 'next/font/google';
 
+import { ClientProvider } from '~/shared/ui/ClientProvider';
+
 import '~/styles/index.scss';
 
 const inter = Inter({
@@ -13,7 +15,9 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+      <body>
+        <ClientProvider>{children}</ClientProvider>
+      </body>
     </html>
   );
 }

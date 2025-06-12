@@ -7,12 +7,7 @@
 
   input {
     width: 100%;
-  }
-
-  .errorMessage {
-    font-size: map-get($typography, xs);
-    color: var(--errorColor);
-    font-weight: map-get($fontWeight, semiBold);
+    background-color: var(--inputBackground);
   }
 
   .passwordToggle {
@@ -22,6 +17,12 @@
     transform: translateY(-50%);
     background: transparent;
   }
+}
+
+.errorMessage {
+  font-size: map-get($typography, xs);
+  color: var(--errorColor);
+  font-weight: map-get($fontWeight, semiBold);
 }
 
 .primary {

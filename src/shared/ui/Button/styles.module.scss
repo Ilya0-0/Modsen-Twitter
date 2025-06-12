@@ -49,8 +49,8 @@
 
 .outlineGray {
   color: var(--white);
-  border-radius: map-get($borderRadius, sm);
-  background-color: var(--primary);
+  border-radius: map-get($borderRadius, round);
+  background-color: var(--gray);
 }
 
 .delete {

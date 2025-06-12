@@ -8,7 +8,7 @@ const SignUpWithEmail = () => {
   const router = useRouter();
 
   const onLoginPageRedirect = () => {
-    router.push('/login');
+    router.push('/auth/sign-up');
   };
 
   return (

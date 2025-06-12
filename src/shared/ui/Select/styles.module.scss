@@ -11,7 +11,7 @@
   border: map-get($borderWidth, thin) solid var(--gray);
   color: var(--gray);
   padding: clamp(map-get($spacing, md), 2vw, map-get($spacing, lg));
-  padding-right: 32px;
+  padding-right: map-get($spacing, 2xl);
   font-size: map-get($typography, md);
   transition: border-color 0.3s ease;
 

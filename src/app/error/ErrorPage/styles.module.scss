@@ -1,0 +1,48 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.errorContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: map-get($sizes, widthErrorPopup);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: map-get($spacing, 3xl);
+  border: map-get($borderWidth, thin) solid var(--gray);
+  padding: map-get($spacing, 2xl);
+  border-radius: map-get($borderRadius, lg);
+
+  .errorBody {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, xl);
+
+    .messageBlock {
+      width: 100%;
+
+      h1 {
+        font-size: map-get($typography, lg);
+        font-weight: map-get($fontWeight, semiBold);
+        margin-bottom: map-get($spacing, md);
+      }
+
+      p {
+        color: var(--gray);
+      }
+    }
+
+    .buttonContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: map-get($spacing, md);
+    }
+  }
+}
+
+.logo {
+  width: map-get($sizes, iconMedium);
+}

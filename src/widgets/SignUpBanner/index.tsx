@@ -1,8 +1,7 @@
 import Image from 'next/image';
 
+import dummy from '~/public/png/Work-from-home.webp';
 import Banner from '~/shared/ui/Banner';
-
-import dummy from '/public/png/Work-from-home.png';
 
 import styles from './styles.module.scss';
 
@@ -11,7 +10,12 @@ const SignUpBanner = () => {
     <Banner className={styles.banner}>
       <div className={styles.bannerContent}>
         <div className={styles.dummy}>
-          <Image src={dummy} alt="a man working on laptop" />
+          <Image
+            draggable={false}
+            fill
+            src={dummy}
+            alt="a man working on laptop"
+          />
         </div>
       </div>
     </Banner>
