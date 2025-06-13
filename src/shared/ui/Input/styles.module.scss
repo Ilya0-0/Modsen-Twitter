@@ -1,8 +1,12 @@
 @use 'styles/_variables.scss' as *;
 @use 'sass:map';
 
-.inputWrapper {
+.container {
   position: relative;
+  margin-bottom: map-get($spacing, xl);
+}
+
+.inputWrapper {
   width: 100%;
 
   input {
@@ -20,9 +24,12 @@
 }
 
 .errorMessage {
+  position: absolute;
+  bottom: calc(-1 * map-get($spacing, lg));
   font-size: map-get($typography, xs);
   color: var(--errorColor);
   font-weight: map-get($fontWeight, semiBold);
+  z-index: map-get($z-indexes, content);
 }
 
 .primary {

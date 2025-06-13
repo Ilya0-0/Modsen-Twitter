@@ -25,13 +25,18 @@ const Input = ({
 
   const inputId = id || props.name;
 
-  const togglePasswordVisibility = (e: React.MouseEvent) => {
+  const setPasswordVisibile = (e: React.MouseEvent) => {
     e.preventDefault();
-    setShowPassword((prev) => !prev);
+    setShowPassword(true);
+  };
+
+  const setPasswordUnvisibile = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowPassword(false);
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={`${styles.inputWrapper} ${className || ''}`}>
         <input
           id={inputId}
@@ -44,7 +49,9 @@ const Input = ({
         {isPasswordField && (
           <button
             className={styles.passwordToggle}
-            onClick={togglePasswordVisibility}
+            onMouseDown={setPasswordVisibile}
+            onMouseUp={setPasswordUnvisibile}
+            onMouseLeave={setPasswordUnvisibile}
             aria-label={showPassword ? 'Hide password' : 'Show password'}
           >
             {showPassword ? <EyeIcon /> : <EyeOffIcon />}

@@ -1,9 +1,9 @@
 import { redirect } from 'next/navigation';
 
+import ProfileNotificationHandler from '~/features/auth/ui/ProfileNotificationHandler';
 import { createClient } from '~/utils/supabase/server';
+import ProfileView from '~/widgets/ProfileView';
 
-import ProfileNotificationHandler from './ProfileNotificationHandler';
-import ProfileView from './ProfileView';
 import { UserProfile } from './userProfile.t';
 
 export default async function ProfilePage({

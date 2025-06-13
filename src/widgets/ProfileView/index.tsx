@@ -2,9 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 
+import { UserProfile } from '~/app/profile/[userId]/userProfile.t';
 import { createClient } from '~/utils/supabase/client';
-
-import { UserProfile } from './userProfile.t';
 
 interface ProfileViewProps {
   profile: UserProfile;
