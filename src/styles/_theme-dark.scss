@@ -1,1 +1,16 @@
-$dark-theme: ();
+$dark-theme: (
+  semiTransparentBlack: #ffffff99,
+  primary: #1da1f2,
+  semiPrimary: #1da1f280,
+  background: #1a1a1a,
+  textColor: #e0e0e0,
+  errorColor: #ef1c5c,
+  errorShadow: 0 0 4px 1px #f15e5e,
+  successColor: #17a100,
+  succesShadow: 0 0 4px 1px #71ef5e,
+  backgroundColor: #1a1a1a,
+  scrollbar: #2d2d2d,
+  inputBackground: #2d2d2d,
+  matteColor: #0000009a,
+  skeletonGradient: linear-gradient(90deg, transparent, #eaeaea45, transparent),
+);

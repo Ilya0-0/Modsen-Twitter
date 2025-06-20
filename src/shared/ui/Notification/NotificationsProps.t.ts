@@ -1,5 +1,7 @@
+import { FC, SVGProps } from 'react';
+
 export interface NotificationProps {
-  svgr: React.FC<React.SVGProps<SVGSVGElement>>;
+  svgr: FC<SVGProps<SVGSVGElement>>;
   title: string;
   text: string;
   variant: NotificationVariant;

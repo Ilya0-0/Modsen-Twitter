@@ -1,0 +1,38 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.container {
+  height: fit-content;
+  padding: map-get($spacing, md);
+  max-width: map-get($sizes, maxWidthProfileNav);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--backgroundColor);
+  border-right: map-get($borderWidth, thin) solid var(--gray);
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: map-get($media, md)) {
+    position: absolute;
+    top: map-get($sizes, null);
+    left: map-get($sizes, null);
+    bottom: map-get($sizes, null);
+    z-index: map-get($z-indexes, overlay);
+
+    &.hidden {
+      transform: translateX(-100%);
+    }
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}
+.aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: map-get($spacing, xl);
+  padding: map-get($spacing, sm);
+  color: var(--textColor);
+}

@@ -7,4 +7,5 @@
   flex-wrap: wrap;
   gap: map-get($spacing, xl);
   justify-content: center;
+  color: var(--textColor);
 }

@@ -8,9 +8,10 @@
   gap: clamp(map-get($spacing, xl), 2vw, map-get($spacing, 3xl));
   flex-grow: 1;
   margin-right: map-get($spacing, 2xl);
+  color: var(--textColor);
 
   .logo {
-    width: map-get($sizes, iconMedium);
+    width: map-get($sizes, iconLarge);
   }
 
   h1 {

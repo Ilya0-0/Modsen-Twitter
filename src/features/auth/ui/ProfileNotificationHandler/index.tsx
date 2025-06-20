@@ -2,9 +2,7 @@
 
 import { useEffect } from 'react';
 
-import { useAppDispatch } from '~/hooks/useAppDispatch';
-import { NotificationVariant } from '~/shared/ui/Notification/NotificationsProps.t';
-import { addNotification } from '~/store/notificationsSlice';
+import useNotifications from '~/hooks/useNotifications';
 
 interface ProfileNotificationHandlerProps {
   errorMessage?: string;
@@ -13,19 +11,13 @@ interface ProfileNotificationHandlerProps {
 const ProfileNotificationHandler = ({
   errorMessage,
 }: ProfileNotificationHandlerProps) => {
-  const dispatch = useAppDispatch();
+  const { notifyError } = useNotifications();
 
   useEffect(() => {
     if (errorMessage) {
-      dispatch(
-        addNotification({
-          type: NotificationVariant.Error,
-          title: 'Profile Error',
-          message: errorMessage,
-        })
-      );
+      notifyError('Profile Error', errorMessage);
     }
-  }, [dispatch, errorMessage]);
+  }, [notifyError, errorMessage]);
 
   return null;
 };

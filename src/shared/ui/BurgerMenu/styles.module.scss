@@ -1,0 +1,42 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.burgerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: map.get($spacing, xs);
+  width: map.get($sizes, burgerWidth);
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.burgerItem {
+  padding-top: 2px;
+  background-color: var(--textColor);
+  border-radius: map.get($borderRadius, xs);
+  position: relative;
+  transition: 0.3s linear;
+  height: map.get($sizes, burgerHeight);
+
+  &:first-child {
+    width: 50%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:last-child {
+    align-self: flex-end;
+    width: 50%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
