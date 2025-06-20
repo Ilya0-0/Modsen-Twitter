@@ -16,7 +16,6 @@
   .inputContainer {
     display: flex;
     flex-direction: column;
-    gap: map-get($spacing, xl);
     width: 100%;
   }
 

@@ -1,9 +1,8 @@
 import Image from 'next/image';
 
+import chandelier from '~/public/png/chandelier-with-green-round-lampshade.webp';
+import dummy from '~/public/png/dummy.webp';
 import Banner from '~/shared/ui/Banner';
-
-import chandelier from '/public/png/chandelier-with-green-round-lampshade.png';
-import dummy from '/public/png/dummy.png';
 
 import styles from './styles.module.scss';
 
@@ -12,10 +11,14 @@ const LoginBanner = () => {
     <Banner className={styles.banner}>
       <div className={styles.bannerContent}>
         <div className={styles.chandelier}>
-          <Image src={chandelier} alt="chandelier with green round lampshade" />
+          <Image
+            draggable={false}
+            src={chandelier}
+            alt="chandelier with green round lampshade"
+          />
         </div>
         <div className={styles.dummy}>
-          <Image src={dummy} alt="a man holds a phone" />
+          <Image draggable={false} src={dummy} alt="a man holds a phone" />
         </div>
       </div>
     </Banner>

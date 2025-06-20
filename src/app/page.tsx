@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 const Home = () => {
-  redirect('/signup-main');
+  redirect('/auth/signup-main');
 };
 
 export default Home;

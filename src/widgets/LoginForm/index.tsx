@@ -1,29 +1,87 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+
 import Link from 'next/link';
 
+import { login } from '~/features/auth/model/actions';
+import { useAppDispatch } from '~/hooks/useAppDispatch';
+import TwitterLogo from '~/public/svg/twitter-logo.svg?react';
+import { loginSchema } from '~/schemas/loginSchema';
 import PrimaryButton from '~/shared/ui/Button/variants/PrimaryButton';
 import PrimaryInput from '~/shared/ui/Input/variants/PrimaryInput';
+import { NotificationVariant } from '~/shared/ui/Notification/NotificationsProps.t';
+import { addNotification } from '~/store/notificationsSlice';
 
-import TwitterLogo from '/public/svg/twitter-logo.svg?react';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import styles from './styles.module.scss';
 
+interface LoginFormData {
+  email: string;
+  password: string;
+}
+
 const LoginForm = () => {
+  const dispatch = useAppDispatch();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(loginSchema),
+  });
+
+  const onSubmit = async (data: LoginFormData) => {
+    const formData = new FormData();
+    formData.append('email', data.email);
+    formData.append('password', data.password);
+    try {
+      await login(formData);
+    } catch (error: unknown) {
+      if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
+        return;
+      }
+
+      const errorMessage =
+        error && typeof error === 'object' && 'message' in error
+          ? (error.message as string)
+          : 'Unknown error';
+
+      dispatch(
+        addNotification({
+          type: NotificationVariant.Error,
+          title: 'Login failed',
+          message: errorMessage,
+        })
+      );
+    }
+  };
+
   return (
-    <section className={styles.loginContainer}>
+    <form className={styles.loginContainer} onSubmit={handleSubmit(onSubmit)}>
       <TwitterLogo className={styles.logo} />
       <h1>Log in to Twitter</h1>
       <div className={styles.inputContainer}>
-        <PrimaryInput placeholder="Phone number, email address" />
         <PrimaryInput
-          error="Password must contain a minimum of 8 characters, 1 lower case letter, 1 upper case letter"
+          type="email"
+          autoComplete="email"
+          {...register('email')}
+          error={errors.email?.message}
+          placeholder="Email address"
+        />
+        <PrimaryInput
           placeholder="Password"
+          type="password"
+          error={errors.password?.message}
+          {...register('password')}
         />
       </div>
-      <PrimaryButton>Log In</PrimaryButton>
-      <Link className={styles.highlight} href="/sign-up">
+      <PrimaryButton type="submit">Log In</PrimaryButton>
+      <Link className={styles.highlight} href="/auth/sign-up">
         Sign up to Twitter
       </Link>
-    </section>
+    </form>
   );
 };
 

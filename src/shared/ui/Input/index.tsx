@@ -2,10 +2,9 @@
 
 import { useState } from 'react';
 
-import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps';
-
-import EyeIcon from '/public/svg/eyeIcon.svg?react';
-import EyeOffIcon from '/public/svg/eyeOffIcon.svg?react';
+import EyeIcon from '~/public/svg/eyeIcon.svg?react';
+import EyeOffIcon from '~/public/svg/eyeOffIcon.svg?react';
+import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps.t';
 
 import styles from './styles.module.scss';
 
@@ -26,29 +25,39 @@ const Input = ({
 
   const inputId = id || props.name;
 
-  const togglePasswordVisibility = () => {
-    setShowPassword((prev) => !prev);
+  const setPasswordVisibile = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowPassword(true);
+  };
+
+  const setPasswordUnvisibile = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowPassword(false);
   };
 
   return (
-    <div className={`${styles.inputWrapper} ${className || ''}`}>
-      <input
-        id={inputId}
-        type={actualType}
-        onChange={onChange}
-        aria-invalid={Boolean(error)}
-        className={styles[variant]}
-        {...props}
-      />
-      {isPasswordField && (
-        <button
-          className={styles.passwordToggle}
-          onClick={togglePasswordVisibility}
-          aria-label={showPassword ? 'Hide password' : 'Show password'}
-        >
-          {showPassword ? <EyeIcon /> : <EyeOffIcon />}
-        </button>
-      )}
+    <div className={styles.container}>
+      <div className={`${styles.inputWrapper} ${className || ''}`}>
+        <input
+          id={inputId}
+          type={actualType}
+          onChange={onChange}
+          aria-invalid={Boolean(error)}
+          className={styles[variant]}
+          {...props}
+        />
+        {isPasswordField && (
+          <button
+            className={styles.passwordToggle}
+            onMouseDown={setPasswordVisibile}
+            onMouseUp={setPasswordUnvisibile}
+            onMouseLeave={setPasswordUnvisibile}
+            aria-label={showPassword ? 'Hide password' : 'Show password'}
+          >
+            {showPassword ? <EyeIcon /> : <EyeOffIcon />}
+          </button>
+        )}
+      </div>
       {error && (
         <label htmlFor={inputId} className={styles.errorMessage}>
           {error}

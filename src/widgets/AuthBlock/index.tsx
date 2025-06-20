@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
 import { SignUpWithEmail, SignUpWithGoogle } from '~/features/auth/ui';
-
-import TwitterLogo from '/public/svg/twitter-logo.svg?react';
+import TwitterLogo from '~/public/svg/twitter-logo.svg?react';
 
 import styles from './styles.module.scss';
 
@@ -26,7 +25,7 @@ const AuthBlock = () => {
         </p>
         <p>
           Already have an account?{' '}
-          <Link className={styles.highlight} href="/login">
+          <Link className={styles.highlight} href="/auth/login">
             Log in
           </Link>
         </p>

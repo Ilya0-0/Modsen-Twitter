@@ -28,7 +28,13 @@
       "~/entities/*": ["./src/entities/*"],
       "~/shared/*": ["./src/shared/*"],
       "~/styles/*": ["./src/styles/*"],
-      "~/constants/*": ["./src/constants/*"]
+      "~/schemas/*": ["./src/schemas/*"],
+      "~/store/*": ["./src/store/*"],
+      "~/hooks/*": ["./src/hooks/*"],
+      "~/constants/*": ["./src/constants/*"],
+      "~/lib/*": ["./src/lib/*"],
+      "~/utils/*": ["./src/utils/*"],
+      "~/public/*": ["./public/*"]
     }
   },
   "include": [

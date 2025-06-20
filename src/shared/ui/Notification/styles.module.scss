@@ -1,0 +1,56 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.container {
+  position: fixed;
+  right: map-get($spacing, lg);
+  top: map-get($spacing, lg);
+  display: flex;
+  gap: map-get($spacing, lg);
+  padding: map-get($spacing, lg);
+  border-radius: map-get($borderRadius, lg);
+  height: fit-content;
+  max-width: map-get($sizes, maxWidthNotification);
+  width: 100%;
+  animation: slideIn 0.6s ease;
+  background-color: var(--backgroundColor);
+  z-index: map-get($z-indexes, notification);
+  cursor: pointer;
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, sm);
+    word-break: break-all;
+
+    h3 {
+      font-weight: map-get($fontWeight, 600);
+      font-size: map-get($typography, md);
+    }
+
+    p {
+      color: var(--gray);
+    }
+  }
+}
+
+.success {
+  border: map-get($borderWidth, medium) solid var(--green);
+  box-shadow: var(--succesShadow);
+}
+
+.error {
+  border: map-get($borderWidth, medium) solid var(--errorColor);
+  box-shadow: var(--errorShadow);
+}

@@ -1,4 +1,4 @@
-import { ButtonProps, ButtonVariant } from '~/shared/ui/Button/ButtonProps';
+import { ButtonProps, ButtonVariant } from '~/shared/ui/Button/ButtonProps.t';
 
 import Button from '../..';
 

@@ -1,4 +1,4 @@
-import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps';
+import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps.t';
 
 import Input from '../..';
 

@@ -1,6 +1,5 @@
+import TwitterLogo from '~/public/svg/twitter-logo.svg?react';
 import Banner from '~/shared/ui/Banner';
-
-import TwitterLogo from '/public/svg/twitter-logo.svg?react';
 
 import styles from './styles.module.scss';
 

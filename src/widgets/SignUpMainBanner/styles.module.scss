@@ -2,7 +2,7 @@
 @use 'sass:map';
 
 .banner {
-  background-image: url('/png/banner1.png');
+  background-image: url('/png/banner1.webp');
   background-position: 50%;
   width: 40%;
   height: 100%;
@@ -40,6 +40,7 @@
       left: map-get($spacing, lg);
       color: var(--semiWhite);
       font-weight: map-get($fontWeight, black);
+      user-select: none;
     }
 
     .bannerImg {
