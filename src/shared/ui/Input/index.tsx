@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 
 import EyeIcon from '~/public/svg/eyeIcon.svg?react';
 import EyeOffIcon from '~/public/svg/eyeOffIcon.svg?react';
@@ -25,12 +25,12 @@ const Input = ({
 
   const inputId = id || props.name;
 
-  const setPasswordVisibile = (e: React.MouseEvent) => {
+  const setPasswordVisibile = (e: MouseEvent) => {
     e.preventDefault();
     setShowPassword(true);
   };
 
-  const setPasswordUnvisibile = (e: React.MouseEvent) => {
+  const setPasswordUnvisibile = (e: MouseEvent) => {
     e.preventDefault();
     setShowPassword(false);
   };

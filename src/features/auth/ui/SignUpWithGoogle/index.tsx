@@ -1,16 +1,15 @@
 'use client';
 
-import { useAppDispatch } from '~/hooks/useAppDispatch';
+import useNotifications from '~/hooks/useNotifications';
 import GoogleLogo from '~/public/svg/google-logo.svg?react';
 import OutlinePrimaryButton from '~/shared/ui/Button/variants/OutlinePrimaryButton';
-import { NotificationVariant } from '~/shared/ui/Notification/NotificationsProps.t';
-import { addNotification } from '~/store/notificationsSlice';
 import { createClient } from '~/utils/supabase/client';
 
 import styles from './styles.module.scss';
 
 const SignUpWithGoogle = () => {
-  const dispatch = useAppDispatch();
+  const { notifyError } = useNotifications();
+
   const handleGoogleSignUp = async () => {
     const supabase = createClient();
 
@@ -21,13 +20,7 @@ const SignUpWithGoogle = () => {
       },
     });
     if (error) {
-      dispatch(
-        addNotification({
-          type: NotificationVariant.Error,
-          title: 'Error Google auth',
-          message: error.message,
-        })
-      );
+      notifyError('Error Google auth', error.message);
     }
   };
 

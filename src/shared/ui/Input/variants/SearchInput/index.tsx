@@ -1,6 +1,5 @@
+import SearchIcon from '~/public/svg/search.svg?react';
 import { InputProps, InputVariant } from '~/shared/ui/Input/InputProps.t';
-
-import SearchIcon from '/public/svg/search.svg?react';
 
 import Input from '../..';
 import styles from './styles.module.scss';

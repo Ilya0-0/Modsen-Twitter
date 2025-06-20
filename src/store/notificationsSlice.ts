@@ -2,7 +2,7 @@ import { NotificationVariant } from '~/shared/ui/Notification/NotificationsProps
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface Notification {
+export interface Notification {
   id: string;
   type: NotificationVariant;
   title: string;

@@ -1,23 +1,28 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
-import { UserProfile } from '~/app/profile/[userId]/userProfile.t';
-import { createClient } from '~/utils/supabase/client';
+import { useAppDispatch } from '~/hooks/useAppDispatch';
+import { UserProfile } from '~/store/types';
+import { setUser } from '~/store/userSlice';
 
 interface ProfileViewProps {
   profile: UserProfile;
 }
 
 export default function ProfileView({ profile }: ProfileViewProps) {
-  const router = useRouter();
-  const supabase = createClient();
+  const dispatch = useAppDispatch();
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.push('/auth/login');
-    router.refresh();
-  };
+  useEffect(() => {
+    if (profile) {
+      dispatch(
+        setUser({
+          id: profile.id,
+          name: profile.name,
+        })
+      );
+    }
+  }, [profile, dispatch]);
 
   return (
     <div>
@@ -25,7 +30,6 @@ export default function ProfileView({ profile }: ProfileViewProps) {
       <p>Email: {profile.email}</p>
       <p>Телефон: {profile.phoneNumber}</p>
       <p>Дата рождения: {profile.birthDate}</p>
-      <button onClick={handleLogout}>Выйти</button>
     </div>
   );
 }

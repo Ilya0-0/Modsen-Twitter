@@ -5,7 +5,7 @@
   max-width: map-get($sizes, maxWidthLoginContainer);
   width: 50%;
   height: 100%;
-  background-color: map-get($commonColors, semiWhite);
+  background-color: var(--matteColor);
   border-radius: map-get($borderRadius, sm);
   padding: clamp(map-get($spacing, xl), 2vw, map-get($spacing, 4xl));
   display: flex;
@@ -20,7 +20,7 @@
   }
 
   .logo {
-    width: map-get($sizes, iconMedium);
+    width: map-get($sizes, iconLarge);
     align-self: center;
   }
 
@@ -64,7 +64,7 @@
     max-width: 100%;
     width: 100%;
     padding: map-get($sizes, null);
-    background-color: none;
+    background-color: transparent;
     height: 100%;
 
     .logo,

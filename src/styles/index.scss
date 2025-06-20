@@ -43,6 +43,10 @@ body,
   }
 }
 
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -93,7 +97,9 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--textColor) !important;
   -webkit-box-shadow: 0 0 0 30px var(--inputBackground) inset !important;
+  caret-color: var(--textColor);
 }
 
 button {

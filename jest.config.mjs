@@ -6,16 +6,18 @@ const __dirname = path.dirname(__filename);
 
 export default {
   preset: 'ts-jest/presets/default-esm',
-  testEnvironment: 'jest-fixed-jsdom',
+  testEnvironment: 'jsdom',
   rootDir: __dirname,
-  testMatch: ['<rootDir>/tests/unit/**/*.{test,spec}.{ts,tsx}'],
+  testMatch: ['<rootDir>/tests/unit/**/*.{ts,tsx}'],
   transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': ['ts-jest', { useESM: true }],
+    '^.+\\.(ts|tsx)$': [
+      'ts-jest',
+      { useESM: true, tsconfig: 'tsconfig.jest.json' },
+    ],
   },
+
   modulePathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/build/'],
   moduleNameMapper: {
-    '^~assets/.*\\.svg\\?react$': '<rootDir>/__mocks__/svgMock.js',
-    '^~assets/.*\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/__mocks__/fileMock.js',
     '^~/app/(.*)$': '<rootDir>/src/app/$1',
     '^~/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^~/widgets/(.*)$': '<rootDir>/src/widgets/$1',
@@ -37,6 +39,5 @@ export default {
     '!src/**/*.d.ts',
     '!src/**/index.{ts,tsx}',
   ],
-  setupFilesAfterEnv: ['@testing-library/jest-dom'],
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };

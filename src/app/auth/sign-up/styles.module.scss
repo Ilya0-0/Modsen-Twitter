@@ -9,6 +9,7 @@
   height: 100%;
   padding: map-get($spacing, 2xl);
   background-size: cover;
+  color: var(--textColor);
 
   @media (max-width: map-get($media, md)) {
     flex-direction: column;

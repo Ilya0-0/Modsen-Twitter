@@ -1,0 +1,52 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.imageContainer {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  input[type='file'] {
+    display: none;
+  }
+
+  .tweetImage {
+    width: map-get($sizes, iconSmall);
+    height: map-get($sizes, iconSmall);
+    position: relative;
+    margin-right: map-get($spacing, sm);
+    cursor: pointer;
+    svg > * {
+      fill: var(--primary);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(-1 * map-get($spacing, xs));
+      right: calc(-1 * map-get($spacing, xs));
+      z-index: map-get($z-indexes, overlay);
+      width: map-get($spacing, sm);
+      height: map-get($spacing, sm);
+      background-color: var(--textColor);
+      mask: url('/svg/cross-primary.svg');
+    }
+
+    &.addImage {
+      &::after {
+        content: '';
+        background: none;
+      }
+    }
+
+    .imagePreview {
+      width: map-get($sizes, iconSmall);
+      height: map-get($sizes, iconSmall);
+      object-fit: cover;
+    }
+  }
+
+  .images {
+    display: flex;
+  }
+}

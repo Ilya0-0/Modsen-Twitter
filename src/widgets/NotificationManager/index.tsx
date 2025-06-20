@@ -13,7 +13,9 @@ const TTL_NOTIFICATION = 5000;
 
 export function NotificationManager() {
   const dispatch = useAppDispatch();
-  const notifications = useAppSelector((state) => state.notifications);
+  const notifications = useAppSelector(
+    (state) => state.notifications.notifications
+  );
 
   useEffect(() => {
     notifications.forEach((notification) => {
