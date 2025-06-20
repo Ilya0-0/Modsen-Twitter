@@ -1,0 +1,34 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.header {
+  width: 100%;
+}
+
+.logoAndSwitch {
+  display: flex;
+  justify-content: start;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: map-get($spacing, md);
+
+  .logo {
+    width: map-get($sizes, iconLarge);
+    height: map-get($sizes, iconLarge);
+  }
+
+  .switchContainer {
+    display: none;
+    @media (max-width: map-get($media, md)) {
+      display: block;
+    }
+  }
+}
+
+.searchContainer {
+  display: none;
+
+  @media (max-width: map-get($media, lg)) {
+    display: block;
+  }
+}

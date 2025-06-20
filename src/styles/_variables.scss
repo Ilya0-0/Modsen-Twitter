@@ -11,9 +11,21 @@ $spacing: (
 
 $sizes: (
   null: 0px,
+  iconMini: 16px,
   iconSmall: 24px,
-  iconMedium: 48px,
+  iconMedium: 36px,
+  iconLarge: 48px,
+  switchWidth: 50px,
+  switchHeight: 25px,
+  burgerWidth: 27px,
+  burgerHeight: 4px,
+  skeletonSm: 16px,
+  areaTextHeight: 120px,
+  maxWidthAddTweetModal: 400px,
+  minWidthDashboard: 500px,
+  minWidthUserSearch: 300px,
   widthErrorPopup: 500px,
+  maxWidthProfileNav: 300px,
   heightOutlinePrimaryBtn: 48px,
   maxWidthLoginContainer: 600px,
   minWidthLoginBanner: 360px,
@@ -74,7 +86,7 @@ $z-indexes: (
 
 $commonColors: (
   'black': #000000,
-  'semiBlack': #00000099,
+  'semiBlack': #0000005f,
   'white': #ffffff,
   'semiWhite': #ffffff9a,
   'blue': #1da1f2,
@@ -83,5 +95,5 @@ $commonColors: (
   'ruby': #ef1c5c,
   'semiRuby': #ef1c5c80,
   'green': #17a100,
-  'gray': #5f6980,
+  'gray': #96999bc8,
 );

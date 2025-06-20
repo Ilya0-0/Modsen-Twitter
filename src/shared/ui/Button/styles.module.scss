@@ -2,12 +2,14 @@
 @use 'sass:map';
 
 .button {
+  width: 100%;
   padding: map-get($spacing, md) map-get($spacing, lg);
   border: none;
   cursor: pointer;
   font-size: map-get($typography, md);
   transition: all 0.3s ease;
   background-color: var(--backgroundColor);
+  color: var(--textColor);
 
   &:hover {
     opacity: 0.9;
@@ -56,6 +58,23 @@
 .delete {
   border: map-get($borderWidth, thin) solid var(--gray);
   border-radius: map-get($borderRadius, sm);
+}
+
+.squareOutlineGray {
+  border: map-get($borderWidth, medium) solid var(--gray);
+  border-radius: map-get($borderRadius, sm);
+  color: var(--gray);
+
+  &:hover {
+    border: map-get($borderWidth, medium) solid var(--textColor);
+    color: var(--textColor);
+  }
+}
+
+.squarePrimary {
+  background-color: var(--primary);
+  border-radius: map-get($borderRadius, sm);
+  color: var(--white);
 }
 
 @media (max-width: map-get($media, sm)) {

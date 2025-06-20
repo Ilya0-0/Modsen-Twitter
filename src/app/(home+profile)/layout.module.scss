@@ -1,0 +1,30 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.pageLayout {
+  display: flex;
+  height: 100%;
+
+  .headerAndMain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  main {
+    flex-grow: 1;
+    height: auto;
+    min-width: map-get($sizes, minWidthDashboard);
+    color: var(--textColor);
+
+    @media (max-width: map-get($media, lg)) {
+      min-width: auto;
+    }
+  }
+
+  .suggestionsPanel {
+    @media (max-width: map-get($media, lg)) {
+      display: none;
+    }
+  }
+}

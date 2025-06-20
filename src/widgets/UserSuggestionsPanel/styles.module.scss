@@ -1,0 +1,12 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.container {
+  padding: map-get($spacing, md)
+    clamp(map-get($spacing, md), 1.6vw, map-get($spacing, 2xl));
+  border-left: map-get($borderWidth, thin) solid var(--gray);
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacing, 4xl);
+  height: 100%;
+}

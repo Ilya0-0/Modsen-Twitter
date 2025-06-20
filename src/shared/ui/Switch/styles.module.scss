@@ -1,0 +1,53 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: map.get($sizes, switchWidth);
+  height: map.get($sizes, switchHeight);
+
+  input {
+    opacity: 0;
+    width: map.get($sizes, null);
+    height: map.get($sizes, null);
+
+    &:checked + .slider {
+      background-color: transparent;
+    }
+
+    &:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: map.get($sizes, null);
+    left: map.get($sizes, null);
+    right: map.get($sizes, null);
+    bottom: map.get($borderWidth, thin);
+    outline: map.get($borderWidth, medium) solid var(--textColor);
+    transition: 0.3s;
+
+    &:before {
+      position: absolute;
+      content: '';
+      height: map.get($sizes, iconMini);
+      width: map.get($sizes, iconMini);
+      left: map.get($spacing, xs);
+      bottom: map.get($spacing, xs);
+      background-color: var(--textColor);
+      transition: 0.3s;
+    }
+  }
+
+  .round {
+    border-radius: map.get($borderRadius, round);
+
+    &:before {
+      border-radius: map.get($borderRadius, round);
+    }
+  }
+}
