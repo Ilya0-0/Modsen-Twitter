@@ -1,0 +1,58 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.profileNav {
+  display: flex;
+  flex-direction: column;
+
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: map.get($spacing, lg);
+
+    a {
+      text-decoration: none;
+    }
+
+    .navIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: map.get($sizes, iconLarge);
+      height: map.get($sizes, iconLarge);
+    }
+
+    .link {
+      font-size: clamp(map.get($typography, sm), 2vw, map.get($typography, md));
+      font-weight: map.get($fontWeight, bold);
+      width: 100%;
+    }
+
+    svg > * {
+      color: var(--textColor);
+      fill: var(--textColor);
+    }
+
+    &:hover {
+      a {
+        color: var(--semiPrimary);
+      }
+
+      svg > * {
+        color: var(--semiPrimary);
+        fill: var(--semiPrimary);
+      }
+    }
+
+    &.active {
+      a {
+        color: var(--primary);
+      }
+
+      svg > * {
+        color: var(--primary);
+        fill: var(--primary);
+      }
+    }
+  }
+}

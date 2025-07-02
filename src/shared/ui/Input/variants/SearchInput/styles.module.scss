@@ -6,7 +6,7 @@
 
   label {
     position: absolute;
-    top: map-get($spacing, md);
-    left: map-get($spacing, lg);
+    top: map.get($spacing, md);
+    left: map.get($spacing, lg);
   }
 }

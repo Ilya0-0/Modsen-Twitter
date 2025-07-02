@@ -1,0 +1,7 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.skeletonLoading {
+  display: flex;
+  height: map.get($sizes, skeletonSm);
+}

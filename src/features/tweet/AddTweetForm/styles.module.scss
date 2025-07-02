@@ -1,0 +1,25 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.container {
+  width: map.get($sizes, maxWidthAddTweetModal);
+  display: flex;
+  flex-direction: column;
+  gap: map.get($spacing, lg);
+
+  @media (max-width: map.get($media, sm)) {
+    width: 100%;
+  }
+
+  button {
+    width: fit-content;
+    align-self: flex-end;
+  }
+
+  .flexRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: map.get($spacing, lg);
+  }
+}

@@ -1,0 +1,8 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.message {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray);
+}

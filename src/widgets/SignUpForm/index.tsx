@@ -1,21 +1,25 @@
 'use client';
 
-import { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import {
+  ChangeEvent,
+  FocusEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { useForm } from 'react-hook-form';
 
 import Link from 'next/link';
 
 import { signup } from '~/features/auth/model/actions';
-import { useAppDispatch } from '~/hooks/useAppDispatch';
+import useNotifications from '~/hooks/useNotifications';
 import TwitterLogo from '~/public/svg/twitter-logo.svg?react';
 import { signUpSchema } from '~/schemas/signUpSchema';
 import PrimaryButton from '~/shared/ui/Button/variants/PrimaryButton';
 import PrimaryInput from '~/shared/ui/Input/variants/PrimaryInput';
-import { NotificationVariant } from '~/shared/ui/Notification/NotificationsProps.t';
 import Select from '~/shared/ui/Select';
 import { getDays, getMonths, getYears } from '~/shared/ui/Select/dateOptions';
 import { SelectOption } from '~/shared/ui/Select/SelectOption';
-import { addNotification } from '~/store/notificationsSlice';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -34,7 +38,7 @@ interface SignUpFormData {
 const PHONE_MASK_PREFIX = '+375(';
 
 const SignUpForm = () => {
-  const dispatch = useAppDispatch();
+  const { notifyError } = useNotifications();
 
   const {
     register,
@@ -150,11 +154,11 @@ const SignUpForm = () => {
 
       rhfOnChange(event);
     },
-    [setValue, formatPhoneNumber, phoneNumberValue, rhfOnChange]
+    [setValue, phoneNumberValue, rhfOnChange]
   );
 
   const handlePhoneNumberBlur = useCallback(
-    (event: React.FocusEvent<HTMLInputElement>) => {
+    (event: FocusEvent<HTMLInputElement>) => {
       rhfOnBlur(event);
     },
     [rhfOnBlur]
@@ -172,13 +176,7 @@ const SignUpForm = () => {
       const result = await signup(formData);
 
       if (result?.error) {
-        dispatch(
-          addNotification({
-            type: NotificationVariant.Error,
-            title: result.error.title,
-            message: result.error.message,
-          })
-        );
+        notifyError(result.error.title, result.error.message);
         return;
       }
     } catch (error: unknown) {
@@ -191,13 +189,7 @@ const SignUpForm = () => {
           ? (error.message as string)
           : 'Unknown error';
 
-      dispatch(
-        addNotification({
-          type: NotificationVariant.Error,
-          title: 'Unexpected Error',
-          message: errorMessage,
-        })
-      );
+      notifyError('Unexpected Error', errorMessage);
     }
   };
 

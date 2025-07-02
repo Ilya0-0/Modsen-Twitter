@@ -3,19 +3,20 @@
 
 .container {
   position: fixed;
-  right: map-get($spacing, lg);
-  top: map-get($spacing, lg);
+  right: map.get($spacing, lg);
+  top: map.get($spacing, lg);
   display: flex;
-  gap: map-get($spacing, lg);
-  padding: map-get($spacing, lg);
-  border-radius: map-get($borderRadius, lg);
+  gap: map.get($spacing, lg);
+  padding: map.get($spacing, lg);
+  border-radius: map.get($borderRadius, lg);
   height: fit-content;
-  max-width: map-get($sizes, maxWidthNotification);
+  max-width: map.get($sizes, maxWidthNotification);
   width: 100%;
   animation: slideIn 0.6s ease;
   background-color: var(--backgroundColor);
-  z-index: map-get($z-indexes, notification);
+  z-index: map.get($z-indexes, notification);
   cursor: pointer;
+  color: var(--textColor);
 
   @keyframes slideIn {
     from {
@@ -31,12 +32,12 @@
   .body {
     display: flex;
     flex-direction: column;
-    gap: map-get($spacing, sm);
+    gap: map.get($spacing, sm);
     word-break: break-all;
 
     h3 {
-      font-weight: map-get($fontWeight, 600);
-      font-size: map-get($typography, md);
+      font-weight: map.get($fontWeight, bold);
+      font-size: map.get($typography, md);
     }
 
     p {
@@ -46,11 +47,11 @@
 }
 
 .success {
-  border: map-get($borderWidth, medium) solid var(--green);
+  border: map.get($borderWidth, medium) solid var(--green);
   box-shadow: var(--succesShadow);
 }
 
 .error {
-  border: map-get($borderWidth, medium) solid var(--errorColor);
+  border: map.get($borderWidth, medium) solid var(--errorColor);
   box-shadow: var(--errorShadow);
 }

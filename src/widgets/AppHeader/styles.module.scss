@@ -1,0 +1,38 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: map.get($spacing, xl) map.get($spacing, lg);
+  border-bottom: map.get($borderWidth, thin) solid var(--gray);
+  color: var(--textColor);
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: map.get($spacing, sm);
+
+    span {
+      font-weight: map.get($fontWeight, semiBold);
+      font-size: map.get($typography, lg);
+    }
+
+    p {
+      color: var(--gray);
+    }
+  }
+
+  .switchContainer {
+    @media (max-width: map.get($media, md)) {
+      display: none;
+    }
+  }
+  .burgerContainer {
+    display: none;
+    @media (max-width: map.get($media, md)) {
+      display: block;
+    }
+  }
+}

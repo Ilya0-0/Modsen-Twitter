@@ -1,0 +1,35 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  text-align: center;
+  padding: map.get($spacing, lg);
+  color: var(--textColor);
+
+  .header404 {
+    font-size: map.get($typography, 2xl);
+    margin-bottom: 20px;
+    color: var(--errorColor);
+  }
+
+  .headerNotFound {
+    font-size: map.get($typography, xl);
+    margin-bottom: map.get($spacing, lg);
+  }
+
+  .link {
+    padding: map.get($spacing, md) map.get($spacing, lg);
+    cursor: pointer;
+    font-size: clamp(map.get($typography, md), 3vw, map.get($typography, sm));
+    transition: all 0.3s ease;
+    color: var(--textColor);
+    background-color: var(--primary);
+    border-radius: map.get($borderRadius, sm);
+    text-decoration: none;
+  }
+}

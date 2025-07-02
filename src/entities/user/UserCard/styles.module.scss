@@ -1,0 +1,29 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.card {
+  display: flex;
+  align-items: start;
+  gap: map.get($spacing, lg);
+  height: 100%;
+
+  .user {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-top: map.get($spacing, xs);
+    gap: map.get($spacing, xs);
+
+    .userName {
+      font-size: map.get($typography, sm);
+      font-weight: map.get($fontWeight, bold);
+    }
+
+    .userId {
+      font-size: map.get($typography, sm);
+      color: var(--gray);
+    }
+  }
+}

@@ -5,13 +5,11 @@ import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 
 import { login } from '~/features/auth/model/actions';
-import { useAppDispatch } from '~/hooks/useAppDispatch';
+import useNotifications from '~/hooks/useNotifications';
 import TwitterLogo from '~/public/svg/twitter-logo.svg?react';
 import { loginSchema } from '~/schemas/loginSchema';
 import PrimaryButton from '~/shared/ui/Button/variants/PrimaryButton';
 import PrimaryInput from '~/shared/ui/Input/variants/PrimaryInput';
-import { NotificationVariant } from '~/shared/ui/Notification/NotificationsProps.t';
-import { addNotification } from '~/store/notificationsSlice';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -23,7 +21,8 @@ interface LoginFormData {
 }
 
 const LoginForm = () => {
-  const dispatch = useAppDispatch();
+  const { notifyError } = useNotifications();
+
   const {
     register,
     handleSubmit,
@@ -48,13 +47,7 @@ const LoginForm = () => {
           ? (error.message as string)
           : 'Unknown error';
 
-      dispatch(
-        addNotification({
-          type: NotificationVariant.Error,
-          title: 'Login failed',
-          message: errorMessage,
-        })
-      );
+      notifyError('Login failed', errorMessage);
     }
   };
 

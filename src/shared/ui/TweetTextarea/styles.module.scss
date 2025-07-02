@@ -1,0 +1,42 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.textAreaContainer {
+  width: 100%;
+  position: relative;
+
+  .customTextarea {
+    padding: map.get($spacing, sm);
+    margin-bottom: map.get($spacing, sm);
+    background: var(--secondary);
+    border-radius: map.get($borderRadius, xs);
+    color: var(--textColor);
+    outline: map.get($borderWidth, medium) solid var(--primary);
+    font-size: map.get($typography, md);
+    font-weight: map.get($typography, bold);
+    width: 100%;
+    height: map.get($sizes, areaTextHeight);
+    resize: none;
+  }
+
+  .errorMessage {
+    position: absolute;
+    left: map.get($sizes, null);
+    bottom: map.get($sizes, null);
+    font-size: map.get($typography, xs);
+    color: var(--errorColor);
+    font-weight: map.get($fontWeight, semiBold);
+    z-index: map.get($z-indexes, content);
+  }
+
+  .limit {
+    display: block;
+    text-align: end;
+    font-size: map.get($typography, xs);
+    color: var(--gray);
+
+    &.error {
+      color: var(--errorColor);
+    }
+  }
+}

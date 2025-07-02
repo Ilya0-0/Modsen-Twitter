@@ -4,9 +4,9 @@
 .container {
   display: flex;
   height: 100%;
-  gap: map-get($spacing, 3xl);
+  gap: map.get($spacing, 3xl);
 
-  @media (max-width: map-get($media, md)) {
+  @media (max-width: map.get($media, md)) {
     flex-direction: column;
   }
 }

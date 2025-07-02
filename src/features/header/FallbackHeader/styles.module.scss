@@ -1,0 +1,36 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: map.get($spacing, md);
+  cursor: pointer;
+
+  &:hover {
+    svg {
+      position: relative;
+      transform: translateX(calc(-1 * map.get($spacing, xs)));
+    }
+  }
+
+  svg {
+    transition: transform 0.3s ease-out;
+
+    & > * {
+      fill: var(--textColor);
+    }
+  }
+
+  span {
+    position: relative;
+    &::before {
+      content: '';
+      height: 100%;
+      border: map.get($borderWidth, thin) solid var(--textColor);
+      position: absolute;
+      left: calc(-1 * map.get($spacing, sm));
+      font-weight: map.get($fontWeight, regular);
+    }
+  }
+}

@@ -7,12 +7,12 @@
   user-select: none;
   cursor: pointer;
   background: var(--background);
-  border-radius: map-get($borderRadius, xs);
-  border: map-get($borderWidth, thin) solid var(--gray);
-  color: var(--gray);
-  padding: clamp(map-get($spacing, md), 2vw, map-get($spacing, lg));
-  padding-right: map-get($spacing, 2xl);
-  font-size: map-get($typography, md);
+  border-radius: map.get($borderRadius, xs);
+  border: map.get($borderWidth, thin) solid var(--gray);
+  color: var(--textColor);
+  padding: clamp(map.get($spacing, md), 2vw, map.get($spacing, lg));
+  padding-right: map.get($spacing, 2xl);
+  font-size: map.get($typography, md);
   transition: border-color 0.3s ease;
 
   &:focus {
@@ -23,11 +23,11 @@
   &::after {
     content: '';
     position: absolute;
-    right: map-get($spacing, md);
+    right: map.get($spacing, md);
     top: 50%;
     transform: translateY(-50%);
-    width: map-get($spacing, lg);
-    height: map-get($spacing, sm);
+    width: map.get($spacing, lg);
+    height: map.get($spacing, sm);
     mask: url('/svg/chevron.svg') no-repeat;
     background-color: var(--gray);
   }

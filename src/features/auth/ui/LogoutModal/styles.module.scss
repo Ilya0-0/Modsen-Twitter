@@ -1,0 +1,22 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.flexRow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: map.get($spacing, xl);
+
+  p {
+    font-size: map.get($typography, md);
+    font-weight: map.get($fontWeight, bold);
+    color: var(--textColor);
+  }
+
+  .buttons {
+    display: flex;
+    width: 100%;
+    gap: map.get($spacing, lg);
+  }
+}

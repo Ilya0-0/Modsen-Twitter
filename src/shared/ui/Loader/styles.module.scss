@@ -1,0 +1,28 @@
+@use 'styles/_variables.scss' as *;
+@use 'sass:map';
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loader {
+  aspect-ratio: 1 / 1;
+  width: map.get($sizes, loaderSize);
+  border: map.get($borderWidth, thick) solid var(--primary);
+  border-top: 4px solid transparent;
+  border-radius: map.get($borderRadius, round);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
