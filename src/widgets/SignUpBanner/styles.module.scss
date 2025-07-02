@@ -3,7 +3,7 @@
 
 .banner {
   width: 50%;
-  min-width: map-get($sizes, minWidthLoginBanner);
+  min-width: map.get($sizes, minWidthLoginBanner);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -30,7 +30,7 @@
     }
 
     .dummy {
-      bottom: map-get($sizes, null);
+      bottom: map.get($sizes, null);
       width: 70%;
       img {
         width: 100%;
@@ -38,10 +38,10 @@
     }
   }
 
-  @media (max-width: map-get($media, md)) {
+  @media (max-width: map.get($media, md)) {
     flex-direction: column;
     width: 100%;
-    min-width: map-get($sizes, null);
+    min-width: map.get($sizes, null);
     justify-content: start;
     .bannerContent {
       div {

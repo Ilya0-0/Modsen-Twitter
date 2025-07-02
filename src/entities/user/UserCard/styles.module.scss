@@ -4,7 +4,7 @@
 .card {
   display: flex;
   align-items: start;
-  gap: map-get($spacing, lg);
+  gap: map.get($spacing, lg);
   height: 100%;
 
   .user {
@@ -13,16 +13,16 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    padding-top: map-get($spacing, xs);
-    gap: map-get($spacing, xs);
+    padding-top: map.get($spacing, xs);
+    gap: map.get($spacing, xs);
 
     .userName {
-      font-size: map-get($typography, sm);
-      font-weight: map-get($fontWeight, bold);
+      font-size: map.get($typography, sm);
+      font-weight: map.get($fontWeight, bold);
     }
 
     .userId {
-      font-size: map-get($typography, sm);
+      font-size: map.get($typography, sm);
       color: var(--gray);
     }
   }

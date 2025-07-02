@@ -10,16 +10,16 @@
   justify-content: start;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: map-get($spacing, md);
+  margin-bottom: map.get($spacing, md);
 
   .logo {
-    width: map-get($sizes, iconLarge);
-    height: map-get($sizes, iconLarge);
+    width: map.get($sizes, iconLarge);
+    height: map.get($sizes, iconLarge);
   }
 
   .switchContainer {
     display: none;
-    @media (max-width: map-get($media, md)) {
+    @media (max-width: map.get($media, md)) {
       display: block;
     }
   }
@@ -28,7 +28,7 @@
 .searchContainer {
   display: none;
 
-  @media (max-width: map-get($media, lg)) {
+  @media (max-width: map.get($media, lg)) {
     display: block;
   }
 }

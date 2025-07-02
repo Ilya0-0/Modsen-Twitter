@@ -5,14 +5,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: map-get($spacing, xl);
+  gap: map.get($spacing, xl);
 
   .profileAndLogoutBtn {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: map-get($spacing, md);
-    margin-top: map-get($spacing, md);
+    gap: map.get($spacing, md);
+    margin-top: map.get($spacing, md);
   }
 }
 
@@ -25,10 +25,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: map-get($sizes, iconLarge);
-  height: map-get($sizes, iconLarge);
-  border: map-get($borderWidth, thin) solid var(--primary);
-  border-radius: map-get($borderRadius, round);
+  min-width: map.get($sizes, iconLarge);
+  height: map.get($sizes, iconLarge);
+  border: map.get($borderWidth, thin) solid var(--primary);
+  border-radius: map.get($borderRadius, round);
   overflow: hidden;
 
   &.hasAvatar {
@@ -46,6 +46,6 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  padding-top: map-get($spacing, xs);
-  gap: map-get($spacing, xs);
+  padding-top: map.get($spacing, xs);
+  gap: map.get($spacing, xs);
 }

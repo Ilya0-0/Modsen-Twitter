@@ -2,12 +2,12 @@
 @use 'sass:map';
 
 .container {
-  width: map-get($sizes, maxWidthAddTweetModal);
+  width: map.get($sizes, maxWidthAddTweetModal);
   display: flex;
   flex-direction: column;
-  gap: map-get($spacing, lg);
+  gap: map.get($spacing, lg);
 
-  @media (max-width: map-get($media, sm)) {
+  @media (max-width: map.get($media, sm)) {
     width: 100%;
   }
 
@@ -16,12 +16,10 @@
     align-self: flex-end;
   }
 
-  align-items: start;
-
   .flexRow {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: map-get($spacing, lg);
+    gap: map.get($spacing, lg);
   }
 }

@@ -2,11 +2,11 @@
 @use 'sass:map';
 
 .container {
-  padding: map-get($spacing, xl)
-    clamp(map-get($spacing, md), 1.6vw, map-get($spacing, 2xl));
+  padding: map.get($spacing, xl)
+    clamp(map.get($spacing, md), 1.6vw, map.get($spacing, 2xl));
   display: flex;
   flex-direction: column;
-  gap: map-get($spacing, 4xl);
+  gap: map.get($spacing, 4xl);
   width: 100%;
   background-color: var(--backgroundColor);
 }

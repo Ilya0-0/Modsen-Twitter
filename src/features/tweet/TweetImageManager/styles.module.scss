@@ -11,10 +11,10 @@
   }
 
   .tweetImage {
-    width: map-get($sizes, iconSmall);
-    height: map-get($sizes, iconSmall);
+    width: map.get($sizes, iconSmall);
+    height: map.get($sizes, iconSmall);
     position: relative;
-    margin-right: map-get($spacing, sm);
+    margin-right: map.get($spacing, sm);
     cursor: pointer;
     svg > * {
       fill: var(--primary);
@@ -23,11 +23,11 @@
     &::after {
       content: '';
       position: absolute;
-      top: calc(-1 * map-get($spacing, xs));
-      right: calc(-1 * map-get($spacing, xs));
-      z-index: map-get($z-indexes, overlay);
-      width: map-get($spacing, sm);
-      height: map-get($spacing, sm);
+      top: calc(-1 * map.get($spacing, xs));
+      right: calc(-1 * map.get($spacing, xs));
+      z-index: map.get($z-indexes, overlay);
+      width: map.get($spacing, sm);
+      height: map.get($spacing, sm);
       background-color: var(--textColor);
       mask: url('/svg/cross-primary.svg');
     }
@@ -40,8 +40,8 @@
     }
 
     .imagePreview {
-      width: map-get($sizes, iconSmall);
-      height: map-get($sizes, iconSmall);
+      width: map.get($sizes, iconSmall);
+      height: map.get($sizes, iconSmall);
       object-fit: cover;
     }
   }

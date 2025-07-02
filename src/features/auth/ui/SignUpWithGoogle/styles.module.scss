@@ -5,5 +5,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: map-get($spacing, sm);
+  gap: map.get($spacing, sm);
 }

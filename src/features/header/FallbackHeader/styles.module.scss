@@ -4,13 +4,13 @@
 .container {
   display: flex;
   align-items: center;
-  gap: map-get($spacing, md);
+  gap: map.get($spacing, md);
   cursor: pointer;
 
   &:hover {
     svg {
       position: relative;
-      transform: translateX(calc(-1 * map-get($spacing, xs)));
+      transform: translateX(calc(-1 * map.get($spacing, xs)));
     }
   }
 
@@ -27,10 +27,10 @@
     &::before {
       content: '';
       height: 100%;
-      border: map-get($borderWidth, thin) solid var(--textColor);
+      border: map.get($borderWidth, thin) solid var(--textColor);
       position: absolute;
-      left: calc(-1 * map-get($spacing, sm));
-      font-weight: map-get($fontWeight, regular);
+      left: calc(-1 * map.get($spacing, sm));
+      font-weight: map.get($fontWeight, regular);
     }
   }
 }

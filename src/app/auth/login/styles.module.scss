@@ -6,15 +6,15 @@
   background: url('/png/loginBg.webp') no-repeat center bottom;
   width: 100%;
   height: 100%;
-  padding: map-get($spacing, 2xl);
+  padding: map.get($spacing, 2xl);
   background-size: cover;
 
-  @media (max-width: map-get($media, md)) {
+  @media (max-width: map.get($media, md)) {
     flex-direction: column;
-    gap: map-get($spacing, 2xl);
+    gap: map.get($spacing, 2xl);
     background-image: none;
-    padding-top: map-get($spacing, 2xl);
-    padding-bottom: map-get($sizes, null);
+    padding-top: map.get($spacing, 2xl);
+    padding-bottom: map.get($sizes, null);
     height: auto;
   }
 }

@@ -1,18 +1,18 @@
 @use 'styles/_variables.scss' as *;
 @use 'sass:map';
 
-$tweetListGap: map-get($spacing, md);
+$tweetListGap: map.get($spacing, md);
 $countVisibleItem: 3;
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: map-get($spacing, 2xl);
+  gap: map.get($spacing, 2xl);
   width: 100%;
   color: var(--textColor);
-  height: map-get($sizes, heightSearchTweetSection);
+  height: map.get($sizes, heightSearchTweetSection);
 
-  @media (max-width: map-get($media, lg)) {
+  @media (max-width: map.get($media, lg)) {
     width: auto;
     min-width: auto;
     height: auto;
@@ -26,16 +26,16 @@ $countVisibleItem: 3;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: map-get($spacing, md);
+    gap: map.get($spacing, md);
 
-    @media (max-width: map-get($media, lg)) {
+    @media (max-width: map.get($media, lg)) {
       display: none;
     }
   }
 
   .imageWrapper {
-    flex: 1 1 calc(100% / 3 - map-get($spacing, md));
-    max-width: calc(100% / 3 - map-get($spacing, md));
+    flex: 1 1 calc(100% / 3 - map.get($spacing, md));
+    max-width: calc(100% / 3 - map.get($spacing, md));
     height: auto;
 
     img {
@@ -50,12 +50,12 @@ $countVisibleItem: 3;
     display: flex;
     flex-direction: column;
     gap: $tweetListGap;
-    padding-bottom: map-get($spacing, md);
-    border-bottom: map-get($borderWidth, thin) solid var(--gray);
+    padding-bottom: map.get($spacing, md);
+    border-bottom: map.get($borderWidth, thin) solid var(--gray);
 
     .title {
-      font-weight: map-get($fontWeight, semiBold);
-      font-size: map-get($typography, lg);
+      font-weight: map.get($fontWeight, semiBold);
+      font-size: map.get($typography, lg);
     }
 
     .fetchStatus {
@@ -68,10 +68,10 @@ $countVisibleItem: 3;
     .postList {
       display: flex;
       flex-direction: column;
-      gap: map-get($spacing, md);
-      max-height: map-get($sizes, maxHeightSearchTweetList);
+      gap: map.get($spacing, md);
+      max-height: map.get($sizes, maxHeightSearchTweetList);
       overflow-y: auto;
-      padding-right: map-get($spacing, md);
+      padding-right: map.get($spacing, md);
 
       .tweetLink {
         cursor: pointer;
@@ -79,8 +79,8 @@ $countVisibleItem: 3;
       }
 
       li {
-        padding: map-get($spacing, xs);
-        border-left: map-get($borderWidth, thick) solid var(--primary);
+        padding: map.get($spacing, xs);
+        border-left: map.get($borderWidth, thick) solid var(--primary);
 
         &:hover {
           background: var(--teal);
@@ -88,11 +88,11 @@ $countVisibleItem: 3;
 
         p {
           min-height: calc(
-            (map-get($sizes, maxHeightSearchTweetList) - 4 * $tweetListGap) /
+            (map.get($sizes, maxHeightSearchTweetList) - 4 * $tweetListGap) /
               $countVisibleItem
           );
           max-height: calc(
-            (map-get($sizes, maxHeightSearchTweetList) - 4 * $tweetListGap) /
+            (map.get($sizes, maxHeightSearchTweetList) - 4 * $tweetListGap) /
               $countVisibleItem
           );
           display: -webkit-box;

@@ -8,22 +8,22 @@
   right: map.get($sizes, null);
   bottom: map.get($sizes, null);
   background: var(--semiBlack);
-  backdrop-filter: blur(map-get($spacing, xs));
-  padding: map-get($spacing, lg);
+  backdrop-filter: blur(map.get($spacing, xs));
+  padding: map.get($spacing, lg);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: map-get($z-indexes, modal);
+  z-index: map.get($z-indexes, modal);
   overflow: hidden;
   color: var(--textColor);
 }
 
 .modalContent {
   background: var(--backgroundColor);
-  border-radius: map-get($borderRadius, lg);
-  padding: map-get($spacing, lg);
+  border-radius: map.get($borderRadius, lg);
+  padding: map.get($spacing, lg);
 
-  @media (max-width: map-get($media, sm)) {
+  @media (max-width: map.get($media, sm)) {
     width: 100%;
   }
 
@@ -31,11 +31,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: map-get($spacing, lg);
+    margin-bottom: map.get($spacing, lg);
 
     .modalCloseBtn {
-      width: map-get($sizes, iconMini);
-      height: map-get($sizes, iconMini);
+      width: map.get($sizes, iconMini);
+      height: map.get($sizes, iconMini);
       cursor: pointer;
 
       & > * {
@@ -44,8 +44,8 @@
     }
 
     h3 {
-      font-weight: map-get($fontWeight, bold);
-      font-size: map-get($typography, lg);
+      font-weight: map.get($fontWeight, bold);
+      font-size: map.get($typography, lg);
     }
 
     &:not(:has(h3)) {

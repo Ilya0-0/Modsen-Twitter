@@ -5,14 +5,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: map-get($spacing, 3xl);
+  gap: map.get($spacing, 3xl);
   flex-grow: 1;
 
   .mightLike {
-    min-height: map-get($sizes, minHeightYouMightLikeList);
+    min-height: map.get($sizes, minHeightYouMightLikeList);
     display: flex;
     flex-direction: column;
-    gap: map-get($spacing, xl);
+    gap: map.get($spacing, xl);
     color: var(--textColor);
 
     .fetchStatus {
@@ -23,14 +23,14 @@
     }
 
     h3 {
-      font-weight: map-get($fontWeight, semiBold);
-      font-size: map-get($typography, lg);
+      font-weight: map.get($fontWeight, semiBold);
+      font-size: map.get($typography, lg);
     }
 
     .users {
       display: flex;
       flex-direction: column;
-      gap: map-get($spacing, md);
+      gap: map.get($spacing, md);
 
       li {
         text-wrap: nowrap;
@@ -40,7 +40,7 @@
 
         button {
           width: fit-content;
-          font-size: map-get($typography, sm);
+          font-size: map.get($typography, sm);
         }
       }
     }

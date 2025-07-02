@@ -3,5 +3,5 @@
 
 .skeletonLoading {
   display: flex;
-  height: map-get($sizes, skeletonSm);
+  height: map.get($sizes, skeletonSm);
 }

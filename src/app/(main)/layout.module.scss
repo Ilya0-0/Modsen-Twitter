@@ -15,21 +15,21 @@
   main {
     flex-grow: 1;
     height: auto;
-    min-width: map-get($sizes, minWidthDashboard);
+    min-width: map.get($sizes, minWidthDashboard);
     color: var(--textColor);
 
-    @media (max-width: map-get($media, lg)) {
+    @media (max-width: map.get($media, lg)) {
       min-width: auto;
     }
   }
 
   .suggestionsPanel {
     height: 100%;
-    padding-bottom: map-get($spacing, xl);
-    border-left: map-get($borderWidth, thin) solid var(--gray);
-    min-width: map-get($sizes, widthAsideUserSearch);
-    max-width: map-get($sizes, widthAsideUserSearch);
-    @media (max-width: map-get($media, lg)) {
+    padding-bottom: map.get($spacing, xl);
+    border-left: map.get($borderWidth, thin) solid var(--gray);
+    min-width: map.get($sizes, widthAsideUserSearch);
+    max-width: map.get($sizes, widthAsideUserSearch);
+    @media (max-width: map.get($media, lg)) {
       display: none;
     }
   }

@@ -3,22 +3,22 @@
 
 .container {
   height: 100%;
-  padding: map-get($spacing, md);
-  max-width: map-get($sizes, maxWidthProfileNav);
+  padding: map.get($spacing, md);
+  max-width: map.get($sizes, maxWidthProfileNav);
   width: 100%;
   display: flex;
   justify-content: center;
   background: var(--backgroundColor);
-  border-right: map-get($borderWidth, thin) solid var(--gray);
+  border-right: map.get($borderWidth, thin) solid var(--gray);
   transition: transform 0.3s ease-in-out;
 
-  @media (max-width: map-get($media, md)) {
+  @media (max-width: map.get($media, md)) {
     height: fit-content;
     position: absolute;
-    top: map-get($sizes, null);
-    left: map-get($sizes, null);
-    bottom: map-get($sizes, null);
-    z-index: map-get($z-indexes, overlay);
+    top: map.get($sizes, null);
+    left: map.get($sizes, null);
+    bottom: map.get($sizes, null);
+    z-index: map.get($z-indexes, overlay);
     justify-content: start;
 
     &.hidden {
@@ -34,12 +34,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: map-get($spacing, xl);
-  padding: map-get($spacing, sm);
+  gap: map.get($spacing, xl);
+  padding: map.get($spacing, sm);
   color: var(--textColor);
 
-  @media (max-width: map-get($media, lg)) {
+  @media (max-width: map.get($media, lg)) {
     align-items: start;
-    width: map-get($sizes, widthAsideMobileNav);
+    width: map.get($sizes, widthAsideMobileNav);
   }
 }

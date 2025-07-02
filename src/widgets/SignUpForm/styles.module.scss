@@ -2,16 +2,16 @@
 @use 'sass:map';
 
 .loginContainer {
-  max-width: map-get($sizes, maxWidthLoginContainer);
+  max-width: map.get($sizes, maxWidthLoginContainer);
   width: 50%;
   height: 100%;
   background-color: var(--matteColor);
-  border-radius: map-get($borderRadius, sm);
-  padding: clamp(map-get($spacing, xl), 2vw, map-get($spacing, 4xl));
+  border-radius: map.get($borderRadius, sm);
+  padding: clamp(map.get($spacing, xl), 2vw, map.get($spacing, 4xl));
   display: flex;
   flex-direction: column;
   align-self: center;
-  gap: clamp(map-get($spacing, 2xl), 2vw, map-get($spacing, 3xl));
+  gap: clamp(map.get($spacing, 2xl), 2vw, map.get($spacing, 3xl));
 
   .inputContainer {
     display: flex;
@@ -20,18 +20,18 @@
   }
 
   .logo {
-    width: map-get($sizes, iconLarge);
+    width: map.get($sizes, iconLarge);
     align-self: center;
   }
 
   h1 {
-    font-size: clamp(map-get($typography, lg), 4vw, map-get($typography, 2xl));
-    font-weight: map-get($fontWeight, semiBold);
+    font-size: clamp(map.get($typography, lg), 4vw, map.get($typography, 2xl));
+    font-weight: map.get($fontWeight, semiBold);
   }
 
   h3 {
-    font-size: map-get($typography, md);
-    font-weight: map-get($fontWeight, semiBold);
+    font-size: map.get($typography, md);
+    font-weight: map.get($fontWeight, semiBold);
   }
 
   .highlight {
@@ -45,7 +45,7 @@
 
   .dobContainer {
     display: flex;
-    gap: map-get($spacing, lg);
+    gap: map.get($spacing, lg);
 
     & > div {
       flex-basis: 33%;
@@ -55,15 +55,15 @@
       flex-basis: 66%;
     }
 
-    @media (max-width: map-get($media, md)) {
+    @media (max-width: map.get($media, md)) {
       flex-direction: column;
     }
   }
 
-  @media (max-width: map-get($media, md)) {
+  @media (max-width: map.get($media, md)) {
     max-width: 100%;
     width: 100%;
-    padding: map-get($sizes, null);
+    padding: map.get($sizes, null);
     background-color: transparent;
     height: 100%;
 

@@ -3,10 +3,10 @@
 
 .button {
   width: 100%;
-  padding: map-get($spacing, md) map-get($spacing, lg);
+  padding: map.get($spacing, md) map.get($spacing, lg);
   border: none;
   cursor: pointer;
-  font-size: clamp(map-get($typography, md), 3vw, map-get($typography, sm));
+  font-size: clamp(map.get($typography, md), 3vw, map.get($typography, sm));
   transition: all 0.3s ease;
   background-color: var(--backgroundColor);
   color: var(--textColor);
@@ -17,15 +17,15 @@
 }
 
 .outlineBlack {
-  border: map-get($borderWidth, thin) solid var(--semiBlack);
-  border-radius: map-get($borderRadius, round);
+  border: map.get($borderWidth, thin) solid var(--semiBlack);
+  border-radius: map.get($borderRadius, round);
 }
 
 .outlinePrimary {
-  padding: map-get($spacing, md);
-  border: map-get($borderWidth, thin) solid var(--primary);
-  border-radius: map-get($borderRadius, round);
-  height: map-get($sizes, heightOutlinePrimaryBtn);
+  padding: map.get($spacing, md);
+  border: map.get($borderWidth, thin) solid var(--primary);
+  border-radius: map.get($borderRadius, round);
+  height: map.get($sizes, heightOutlinePrimaryBtn);
 
   &:hover {
     background-color: var(--semiBlue);
@@ -33,10 +33,10 @@
 }
 
 .primary {
-  font-weight: map-get($fontWeight, semiBold);
+  font-weight: map.get($fontWeight, semiBold);
   background-color: var(--primary);
   color: var(--white);
-  border-radius: map-get($borderRadius, round);
+  border-radius: map.get($borderRadius, round);
 
   &:disabled {
     background-color: var(--semiBlue);
@@ -46,41 +46,41 @@
 .secondary {
   background-color: var(--gray);
   color: var(--white);
-  border-radius: map-get($borderRadius, round);
-  font-weight: map-get($fontWeight, semiBold);
+  border-radius: map.get($borderRadius, round);
+  font-weight: map.get($fontWeight, semiBold);
 }
 
 .outlineGray {
   color: var(--white);
-  border-radius: map-get($borderRadius, round);
+  border-radius: map.get($borderRadius, round);
   background-color: var(--gray);
 }
 
 .delete {
-  border: map-get($borderWidth, thin) solid var(--gray);
-  border-radius: map-get($borderRadius, sm);
+  border: map.get($borderWidth, thin) solid var(--gray);
+  border-radius: map.get($borderRadius, sm);
 }
 
 .squareOutlineGray {
-  border: map-get($borderWidth, medium) solid var(--gray);
-  border-radius: map-get($borderRadius, sm);
+  border: map.get($borderWidth, medium) solid var(--gray);
+  border-radius: map.get($borderRadius, sm);
   color: var(--gray);
 
   &:hover {
-    border: map-get($borderWidth, medium) solid var(--textColor);
+    border: map.get($borderWidth, medium) solid var(--textColor);
     color: var(--textColor);
   }
 }
 
 .squarePrimary {
   background-color: var(--primary);
-  border-radius: map-get($borderRadius, sm);
+  border-radius: map.get($borderRadius, sm);
   color: var(--white);
 }
 
-@media (max-width: map-get($media, sm)) {
+@media (max-width: map.get($media, sm)) {
   .button {
-    padding: map-get($spacing, md) map-get($spacing, 2xl);
-    font-size: map-get($typography, sm);
+    padding: map.get($spacing, md) map.get($spacing, 2xl);
+    font-size: map.get($typography, sm);
   }
 }

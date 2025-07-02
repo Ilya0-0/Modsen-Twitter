@@ -2,16 +2,16 @@
 @use 'sass:map';
 
 .loginContainer {
-  max-width: map-get($sizes, maxWidthLoginContainer);
+  max-width: map.get($sizes, maxWidthLoginContainer);
   width: 100%;
   height: 100%;
   background-color: var(--matteColor);
-  border-radius: map-get($borderRadius, sm);
-  padding: clamp(map-get($spacing, xl), 2vw, map-get($spacing, 4xl));
+  border-radius: map.get($borderRadius, sm);
+  padding: clamp(map.get($spacing, xl), 2vw, map.get($spacing, 4xl));
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  gap: clamp(map-get($spacing, 2xl), 2vw, map-get($spacing, 3xl));
+  gap: clamp(map.get($spacing, 2xl), 2vw, map.get($spacing, 3xl));
 
   .inputContainer {
     display: flex;
@@ -20,12 +20,12 @@
   }
 
   .logo {
-    width: map-get($sizes, iconLarge);
+    width: map.get($sizes, iconLarge);
   }
 
   h1 {
-    font-size: clamp(map-get($typography, lg), 4vw, map-get($typography, 2xl));
-    font-weight: map-get($fontWeight, black);
+    font-size: clamp(map.get($typography, lg), 4vw, map.get($typography, 2xl));
+    font-weight: map.get($fontWeight, black);
     color: var(--textColor);
   }
 
@@ -37,9 +37,9 @@
     color: var(--primary);
   }
 
-  @media (max-width: map-get($media, md)) {
+  @media (max-width: map.get($media, md)) {
     max-width: 100%;
-    padding: map-get($sizes, null);
+    padding: map.get($sizes, null);
     background-color: transparent;
     height: 100%;
 
