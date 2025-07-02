@@ -23,7 +23,7 @@
     }
 
     .link {
-      font-size: map-get($typography, md);
+      font-size: clamp(map-get($typography, sm), 2vw, map-get($typography, md));
       font-weight: map-get($fontWeight, bold);
       width: 100%;
     }

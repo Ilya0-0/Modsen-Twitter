@@ -1,3 +1,5 @@
+'use client';
+
 import { useRouter } from 'next/navigation';
 
 import SquareOutlineGrayButton from '~/shared/ui/Button/variants/SquareOutlineGrayButton';

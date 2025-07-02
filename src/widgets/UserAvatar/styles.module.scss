@@ -2,6 +2,7 @@
 @use 'sass:map';
 
 .avatar {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +10,11 @@
   height: map-get($sizes, iconLarge);
   border: map-get($borderWidth, thin) solid var(--primary);
   border-radius: map-get($borderRadius, round);
+  overflow: hidden;
+
+  &.hasAvatar {
+    border: none;
+  }
 
   svg > * {
     color: var(--primary);

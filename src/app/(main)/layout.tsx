@@ -24,9 +24,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
         <AppHeader onBurgerClick={toggleNav} />
         <main>{children}</main>
       </div>
-      <div className={styles.suggestionsPanel}>
+      <aside className={styles.suggestionsPanel}>
         <UserSuggestionsPanel />
-      </div>
+      </aside>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { ModalProps } from '../modal.t';
 const AddTweetModal = ({ onClose }: ModalProps) => {
   return (
     <Modal title="Add new Tweet" onClose={onClose}>
-      <AddTweetForm />
+      <AddTweetForm onCloseForm={onClose} />
     </Modal>
   );
 };

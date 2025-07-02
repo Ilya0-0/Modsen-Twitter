@@ -6,7 +6,7 @@
   padding: map-get($spacing, md) map-get($spacing, lg);
   border: none;
   cursor: pointer;
-  font-size: map-get($typography, md);
+  font-size: clamp(map-get($typography, md), 3vw, map-get($typography, sm));
   transition: all 0.3s ease;
   background-color: var(--backgroundColor);
   color: var(--textColor);
@@ -47,6 +47,7 @@
   background-color: var(--gray);
   color: var(--white);
   border-radius: map-get($borderRadius, round);
+  font-weight: map-get($fontWeight, semiBold);
 }
 
 .outlineGray {
@@ -79,7 +80,7 @@
 
 @media (max-width: map-get($media, sm)) {
   .button {
-    padding: map-get($spacing, lg) map-get($spacing, lg);
+    padding: map-get($spacing, md) map-get($spacing, 2xl);
     font-size: map-get($typography, sm);
   }
 }

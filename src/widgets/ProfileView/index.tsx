@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 
-import { UserProfile } from '~/app/(home+profile)/profile/[userId]/userProfile.t';
 import { useAppDispatch } from '~/hooks/useAppDispatch';
+import { UserProfile } from '~/store/types';
 import { setUser } from '~/store/userSlice';
 
 interface ProfileViewProps {

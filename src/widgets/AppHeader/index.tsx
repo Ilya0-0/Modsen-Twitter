@@ -1,38 +1,49 @@
 'use client';
 
-import { useAppSelector } from '~/hooks/useAppSelector';
+import { JSX } from 'react';
+
+import { usePathname } from 'next/navigation';
+
+import FallbackHeader from '~/features/header/FallbackHeader';
+import HomeHeader from '~/features/header/HomeHeader';
+import ProfileHeader from '~/features/header/ProfileHeader';
 import BurgerMenu from '~/shared/ui/BurgerMenu';
 import ThemeToggle from '~/shared/ui/theme/ThemeToggle';
-import { useGetPostCountQuery } from '~/store/supabaseApi';
 
-import Skeleton from '../Skeleton';
-import { SkeletonSize } from '../Skeleton/skeletonSize.t';
 import styles from './styles.module.scss';
 
+const enum AppRoutes {
+  Profile = '/profile',
+  Home = '/home',
+  CatchAll = 'catchAll',
+}
+
+type AppHeaderConfig = Record<AppRoutes, JSX.Element>;
+
+const config: AppHeaderConfig = {
+  ['/profile']: <ProfileHeader />,
+  ['/home']: <HomeHeader />,
+  ['catchAll']: <FallbackHeader />,
+};
+
 const AppHeader = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
-  const { id, name } = useAppSelector((store) => store.user);
+  const pathname = usePathname();
+
   const handleBurgerClick = () => {
     onBurgerClick();
   };
 
-  const {
-    data: postCount,
-    isLoading: isPostsLoading,
-    isUninitialized,
-  } = useGetPostCountQuery(id!, { skip: !id });
+  const renderHeader = () => {
+    for (const [route, component] of Object.entries(config)) {
+      if (pathname.startsWith(route)) return component;
+    }
+
+    return config.catchAll;
+  };
 
   return (
     <header className={styles.header}>
-      <div className={styles.description}>
-        <span>{name}</span>
-        <p className={styles.skeletonLoading}>
-          {isPostsLoading || isUninitialized ? (
-            <Skeleton heightSize={SkeletonSize.Small} />
-          ) : (
-            `${postCount} Tweets`
-          )}
-        </p>
-      </div>
+      <div className={styles.description}>{renderHeader()}</div>
       <div className={styles.switchContainer}>
         <ThemeToggle />
       </div>

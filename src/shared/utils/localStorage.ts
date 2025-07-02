@@ -1,5 +1,6 @@
 const StorageKeys = {
   THEME_KEY: 'theme',
+  USER_DATA_KEY: 'userData',
 } as const;
 
 export type StorageKeysType = (typeof StorageKeys)[keyof typeof StorageKeys];

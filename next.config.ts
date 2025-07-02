@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   sassOptions: {
     includePaths: ['./src'],
   },
+  images: {
+    domains: ['sxxwyzhjgsxpekqvjqcj.supabase.co'],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

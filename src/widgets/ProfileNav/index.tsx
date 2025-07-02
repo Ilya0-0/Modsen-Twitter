@@ -3,9 +3,7 @@
 import { useRef } from 'react';
 
 import { useClickOutside } from '~/hooks/useClickOutside';
-import { useModal } from '~/hooks/useModal';
 
-import AddTweetModal from '../modal/AddTweetModal';
 import NavigationMenu from './NavigationMenu';
 import ProfileNavFooter from './ProfileNavFooter';
 import ProfileNavHeader from './ProfileNavHeader';
@@ -18,7 +16,6 @@ interface ProfileNavProps {
 
 const ProfileNav = ({ isOpen, onClose }: ProfileNavProps) => {
   const divRef = useRef<HTMLDivElement>(null);
-  const { isOpen: isModalOpen, openModal, closeModal } = useModal(false);
 
   useClickOutside(divRef, onClose);
 
@@ -31,10 +28,9 @@ const ProfileNav = ({ isOpen, onClose }: ProfileNavProps) => {
         <aside className={styles.aside}>
           <ProfileNavHeader />
           <NavigationMenu onClose={onClose} />
-          <ProfileNavFooter onNewTweet={openModal} />
+          <ProfileNavFooter />
         </aside>
       </div>
-      {isModalOpen && <AddTweetModal onClose={closeModal} />}
     </>
   );
 };

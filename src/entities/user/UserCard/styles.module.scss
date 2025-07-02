@@ -3,18 +3,22 @@
 
 .card {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: map-get($spacing, lg);
+  height: 100%;
 
   .user {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: start;
+    padding-top: map-get($spacing, xs);
     gap: map-get($spacing, xs);
 
     .userName {
-      font-size: map-get($typography, md);
-      font-weight: map-get($fontWeight, semiBold);
+      font-size: map-get($typography, sm);
+      font-weight: map-get($fontWeight, bold);
     }
 
     .userId {

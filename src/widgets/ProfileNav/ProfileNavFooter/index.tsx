@@ -1,21 +1,23 @@
-'use client';
-
-import UserCard from '~/entities/UserCard';
+import UserCard from '~/entities/user/UserCard';
 import Logout from '~/features/auth/ui/Logout';
-import PrimaryButton from '~/shared/ui/Button/variants/PrimaryButton';
+import { useGetMyProfileQuery } from '~/store/supabaseApi';
 
+import AddTweetButton from '../../../features/tweet/AddTweetButton';
 import styles from './styles.module.scss';
 
-interface ProfileNavFooterProps {
-  onNewTweet: () => void;
-}
+const ProfileNavFooter = () => {
+  const { data: shortProfile, isLoading } = useGetMyProfileQuery();
 
-const ProfileNavFooter = ({ onNewTweet }: ProfileNavFooterProps) => {
   return (
-    <footer>
-      <PrimaryButton onClick={onNewTweet}>New tweet</PrimaryButton>
+    <footer className={styles.footer}>
+      <AddTweetButton />
       <div className={styles.profileAndLogoutBtn}>
-        <UserCard />
+        <UserCard
+          isUserLoading={isLoading}
+          name={shortProfile?.name ?? ''}
+          tgId={shortProfile?.tgId ?? ''}
+          avatarUrl={shortProfile?.avatarUrl ?? null}
+        />
         <Logout />
       </div>
     </footer>

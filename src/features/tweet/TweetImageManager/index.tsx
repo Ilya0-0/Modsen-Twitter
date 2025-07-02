@@ -5,7 +5,7 @@ import Image from 'next/image';
 import useNotifications from '~/hooks/useNotifications';
 import ImageIcon from '~/public/svg/image.svg';
 
-import { FileData } from '../AddTweetForm';
+import { FileData } from '../tweet.t';
 import styles from './styles.module.scss';
 
 const MAX_FILE_SIZE = 15 * 1024 * 1024;

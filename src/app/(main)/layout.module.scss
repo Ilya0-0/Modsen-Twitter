@@ -4,6 +4,7 @@
 .pageLayout {
   display: flex;
   height: 100%;
+  background-color: var(--backgroundColor);
 
   .headerAndMain {
     display: flex;
@@ -23,6 +24,11 @@
   }
 
   .suggestionsPanel {
+    height: 100%;
+    padding-bottom: map-get($spacing, xl);
+    border-left: map-get($borderWidth, thin) solid var(--gray);
+    min-width: map-get($sizes, widthAsideUserSearch);
+    max-width: map-get($sizes, widthAsideUserSearch);
     @media (max-width: map-get($media, lg)) {
       display: none;
     }

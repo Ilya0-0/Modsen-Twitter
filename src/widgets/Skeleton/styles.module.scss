@@ -4,7 +4,7 @@
 .wrapper {
   background-color: var(--gray);
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate-reverse;
-  border-radius: map-get($borderRadius, sm);
+  border-radius: map-get($borderRadius, md);
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -12,6 +12,10 @@
 
   &.small {
     height: map-get($sizes, skeletonSm);
+  }
+
+  &.medium {
+    height: map-get($sizes, skeletonMd);
   }
 
   &::after {

@@ -22,9 +22,9 @@ const useNotifications = () => {
 
   return {
     notifyError: (title: string, message: string) =>
-      notify(NotificationVariant.Error, message, title),
+      notify(NotificationVariant.Error, title, message),
     notifySuccess: (title: string, message: string) =>
-      notify(NotificationVariant.Success, message, title),
+      notify(NotificationVariant.Success, title, message),
   };
 };
 

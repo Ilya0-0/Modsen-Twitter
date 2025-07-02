@@ -1,3 +1,5 @@
+'use client';
+
 import { useModal } from '~/hooks/useModal';
 import SecondaryButton from '~/shared/ui/Button/variants/SecondaryButton';
 import ConfirmLogoutModal from '~/widgets/modal/ConfirmLogoutModal';

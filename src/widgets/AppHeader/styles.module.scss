@@ -5,21 +5,14 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: map-get($spacing, xl) map-get($spacing, lg) map-get($spacing, ld)
-    map-get($spacing, lg);
+  padding: map-get($spacing, xl) map-get($spacing, lg);
   border-bottom: map-get($borderWidth, thin) solid var(--gray);
-
   color: var(--textColor);
 
   .description {
     display: flex;
     flex-direction: column;
     gap: map-get($spacing, sm);
-
-    .skeletonLoading {
-      display: flex;
-      height: map-get($sizes, skeletonSm);
-    }
 
     span {
       font-weight: map-get($fontWeight, semiBold);

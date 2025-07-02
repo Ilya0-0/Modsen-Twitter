@@ -1,5 +1,5 @@
+import TweetSearch from '~/features/users/TweetSearch';
 import TwitterLogo from '~/public/svg/twitter-logo.svg?react';
-import SearchInput from '~/shared/ui/Input/variants/SearchInput';
 import ThemeToggle from '~/shared/ui/theme/ThemeToggle';
 
 import styles from './styles.module.scss';
@@ -14,7 +14,7 @@ const ProfileNavHeader = () => {
         </div>
       </div>
       <div className={styles.searchContainer}>
-        <SearchInput placeholder="Search Twitter" />
+        <TweetSearch />
       </div>
     </header>
   );

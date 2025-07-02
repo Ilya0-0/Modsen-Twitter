@@ -1,3 +1,5 @@
+'use client';
+
 import { RefObject, useCallback, useEffect } from 'react';
 
 export const useClickOutside = (
